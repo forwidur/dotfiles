@@ -54,4 +54,6 @@ Bundle 'lukerandall/haskellmode-vim'
 au BufEnter *.hs compiler ghc
 let g:haddock_browser="/usr/bin/google-chrome"
 
+Bundle 'Valloric/YouCompleteMe'
+
 call vundle#end()
