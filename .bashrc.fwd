@@ -1,0 +1,41 @@
+HISTSIZE=100000
+
+# Add Android SDK to path.
+if [ -d "$HOME/nb_work/android-sdk-linux" ] ; then
+    PATH="$PATH:$HOME/nb_work/android-sdk-linux/platform-tools"
+fi
+
+# Google translate
+translate() { 
+  lng="$1";shift;
+  wget -U "Mozilla/5.0" -qO -                                                         \
+  "http://translate.google.com/translate_a/t?client=t&text=${@// /+}&sl=auto&tl=$lng" \
+  | sed 's/\[\[\[\"//' | cut -d \" -f 1
+}
+
+# Wikipedia
+wiki() { local IFS=_; dig +short txt "${*^}".wp.dg.cx; }
+
+# Youtube
+youtube() {
+  mplayer -cookies -cookies-file /tmp/ytcookie.txt   \
+      $(youtube-dl -g --cookies /tmp/ytcookie.txt "$1")
+}
+
+# Cmdlinefu
+cmdfu(){
+  param="$@"
+  param="${param// /+}"
+  curl "http://www.commandlinefu.com/commands/matching/${param}/$(echo -n ${param} | \
+      openssl base64)/plaintext";
+}
+
+lucky(){ 
+  url=$(echo "http://www.google.com/search?hl=en&q=$@&btnI=I%27m+Feeling+Lucky&aq=f&oq=" | sed 's/ /+/g');
+  google-chrome "$url"; 
+}
+
+clucky(){ 
+  url=$(echo "http://www.google.com/search?hl=en&q=$@&btnI=I%27m+Feeling+Lucky&aq=f&oq=" | sed 's/ /+/g');
+  links "$url"; 
+}
