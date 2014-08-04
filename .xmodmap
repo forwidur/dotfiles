@@ -1,0 +1,6 @@
+remove mod1 = Alt_R
+add mod5 = Alt_R
+
+keycode 66 = Control_R
+clear Lock
+add Control = Control_R
