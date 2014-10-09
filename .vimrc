@@ -33,13 +33,23 @@ set showcmd
 set wildmenu
 set completeopt=longest,menuone
 
+" Move tabs with alt + left|right
+nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
 
-" set textwidth=80
+" Color long lines.
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
 
-
-" fast saving
+" Fast saving.
 :map <F2> :w
 :inoremap  :w
+
+" Remove trailing whitespace.
+autocmd BufWritePre * :%s/\s\+$//e
 
 set history=500
 set undolevels=300
@@ -54,6 +64,6 @@ Bundle 'lukerandall/haskellmode-vim'
 au BufEnter *.hs compiler ghc
 let g:haddock_browser="/usr/bin/google-chrome"
 
-Bundle 'Valloric/YouCompleteMe'
+Bundle 'steffanc/cscopemaps.vim'
 
 call vundle#end()

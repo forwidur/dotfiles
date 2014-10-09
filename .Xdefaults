@@ -1,0 +1,11 @@
+rxvt.foreground: green
+rxvt.background: black
+rxvt.scrollBar_right: 1
+rxvt.saveLines: 10000
+rxvt.visualBell: 1
+rxvt.font: -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1
+urxvt.foreground: green
+urxvt.background: black
+urxvt.scrollBar_right: 1
+urxvt.saveLines: 10000
+urxvt.visualBell: 1
