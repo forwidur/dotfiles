@@ -60,11 +60,12 @@ set noguipty
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Bundle 'fatih/vim-go'
+Plugin 'fatih/vim-go'
 
 Bundle 'steffanc/cscopemaps.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'kien/ctrlp.vim'
+Bundle 'Valloric/YouCompleteMe'
 
 Bundle 'lukerandall/haskellmode-vim'
 au BufEnter *.hs compiler ghc
