@@ -1,4 +1,7 @@
-HISTSIZE=100000
+HISTSIZE=1000000
+
+export GOPATH=~/.go
+export PATH=$PATH:$GOPATH/bin
 
 # Add Android SDK to path.
 if [ -d "$HOME/nb_work/android-sdk-linux" ] ; then
@@ -6,7 +9,7 @@ if [ -d "$HOME/nb_work/android-sdk-linux" ] ; then
 fi
 
 # Google translate
-translate() { 
+translate() {
   lng="$1";shift;
   wget -U "Mozilla/5.0" -qO -                                                         \
   "http://translate.google.com/translate_a/t?client=t&text=${@// /+}&sl=auto&tl=$lng" \
@@ -30,12 +33,12 @@ cmdfu(){
       openssl base64)/plaintext";
 }
 
-lucky(){ 
+lucky(){
   url=$(echo "http://www.google.com/search?hl=en&q=$@&btnI=I%27m+Feeling+Lucky&aq=f&oq=" | sed 's/ /+/g');
-  google-chrome "$url"; 
+  google-chrome "$url";
 }
 
-clucky(){ 
+clucky(){
   url=$(echo "http://www.google.com/search?hl=en&q=$@&btnI=I%27m+Feeling+Lucky&aq=f&oq=" | sed 's/ /+/g');
-  links "$url"; 
+  links "$url";
 }
