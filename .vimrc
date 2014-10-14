@@ -60,10 +60,15 @@ set noguipty
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Bundle 'fatih/vim-go'
+
+Bundle 'steffanc/cscopemaps.vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'kien/ctrlp.vim'
+
 Bundle 'lukerandall/haskellmode-vim'
 au BufEnter *.hs compiler ghc
 let g:haddock_browser="/usr/bin/google-chrome"
 
-Bundle 'steffanc/cscopemaps.vim'
 
 call vundle#end()
