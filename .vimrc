@@ -3,6 +3,7 @@ filetype on
 filetype plugin on
 autocmd FileType *      set formatoptions=tcql nocindent comments&
 autocmd FileType c,cpp  set formatoptions=croql cindent comments=sr:/*,mb:*,ex:*/,://
+autocmd BufRead,BufNewFile *.go set filetype=go
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -44,12 +45,15 @@ else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 
-" Fast saving.
 :map <F2> :w
 :inoremap  :w
 
 " Remove trailing whitespace.
 autocmd BufWritePre * :%s/\s\+$//e
+
+" Go formatting
+autocmd BufWritePre *.go GoFmt
+autocmd FileType go set noet
 
 set history=500
 set undolevels=300
@@ -63,8 +67,12 @@ call vundle#begin()
 Plugin 'fatih/vim-go'
 
 Bundle 'steffanc/cscopemaps.vim'
+
 Bundle 'scrooloose/syntastic'
+:map <F3> :SyntasticCheck
+
 Bundle 'kien/ctrlp.vim'
+
 Bundle 'Valloric/YouCompleteMe'
 
 Bundle 'lukerandall/haskellmode-vim'
