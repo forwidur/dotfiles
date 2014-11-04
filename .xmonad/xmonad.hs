@@ -138,6 +138,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
         , ((modm,               xK_a),            sendMessage MirrorShrink)
         , ((modm,               xK_z),            sendMessage MirrorExpand)
         , ((controlMask .|. mod1Mask, xK_l),      spawn "gnome-screensaver-command -l")
+        , ((controlMask .|. mod1Mask, xK_s),      spawn "sshot")
 --        , ((modm,               xK_z),     toggleWS)
         ]
 

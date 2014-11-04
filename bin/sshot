@@ -1,6 +1,5 @@
 #!/bin/sh
 
 maim -s ~/tmp/screenshot.png
-URL=`imgurbash.sh ~/tmp/screenshot.png`
-echo ${URL}
-xdg-open "${URL}"
+imgurbash.sh ~/tmp/screenshot.png
+xdg-open "`xclip -o`"
