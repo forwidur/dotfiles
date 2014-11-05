@@ -4,6 +4,9 @@ export HISTCONTROL=ignoreboth
 export GOPATH=~/.go
 export PATH=$PATH:$GOPATH/bin
 
+# Enables exclusion glob.
+shopt -s extglob
+
 # Add Android SDK to path.
 if [ -d "$HOME/nb_work/android-sdk-linux" ] ; then
     PATH="$PATH:$HOME/nb_work/android-sdk-linux/platform-tools"
