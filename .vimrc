@@ -65,6 +65,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'fatih/vim-go'
+let g:go_fmt_command = "goimports"
 
 Bundle 'steffanc/cscopemaps.vim'
 
@@ -72,6 +73,8 @@ Bundle 'scrooloose/syntastic'
 :map <F3> :SyntasticCheck
 
 Bundle 'kien/ctrlp.vim'
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_cmd = "CtrlPBuffer"
 
 Bundle 'Valloric/YouCompleteMe'
 
