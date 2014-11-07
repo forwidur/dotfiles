@@ -66,11 +66,15 @@ call vundle#begin()
 
 Plugin 'fatih/vim-go'
 let g:go_fmt_command = "goimports"
+let g:go_fmt_fail_silently = 1
 
 Bundle 'steffanc/cscopemaps.vim'
 
 Bundle 'scrooloose/syntastic'
-:map <F3> :SyntasticCheck
+let g:syntastic_always_populate_loc_list = 1
+map <F3> :SyntasticCheck
+map <C-k> :lnext
+map <C-l> :lprev
 
 Bundle 'kien/ctrlp.vim'
 let g:ctrlp_working_path_mode = 0
@@ -82,5 +86,6 @@ Bundle 'lukerandall/haskellmode-vim'
 au BufEnter *.hs compiler ghc
 let g:haddock_browser="/usr/bin/google-chrome"
 
+Bundle 'tpope/vim-unimpaired'
 
 call vundle#end()
