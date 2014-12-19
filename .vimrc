@@ -87,5 +87,6 @@ au BufEnter *.hs compiler ghc
 let g:haddock_browser="/usr/bin/google-chrome"
 
 Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-obsession'
 
 call vundle#end()
