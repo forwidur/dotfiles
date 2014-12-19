@@ -67,6 +67,7 @@ call vundle#begin()
 Plugin 'fatih/vim-go'
 let g:go_fmt_command = "goimports"
 let g:go_fmt_fail_silently = 1
+let g:go_bin_path = expand("~/.go/bin")
 
 Bundle 'steffanc/cscopemaps.vim'
 
@@ -87,5 +88,9 @@ au BufEnter *.hs compiler ghc
 let g:haddock_browser="/usr/bin/google-chrome"
 
 Bundle 'tpope/vim-unimpaired'
+
+Bundle 'tpope/vim-surround'
+
+Bundle 'bendavis78/vim-polymer'
 
 call vundle#end()
