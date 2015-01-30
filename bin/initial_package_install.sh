@@ -8,5 +8,11 @@ sudo aptitude install -y \
   clipit \
   ghc \
   source-highlight \
+  qbittorrent \
   xmonad \
+  urxvt \
+  vim \
+  vim-gtk \
+  vim-youcompleteme \
+  youtube-dl \
 
