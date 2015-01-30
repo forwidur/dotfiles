@@ -1,6 +1,8 @@
 export HISTSIZE=1000000
 export HISTCONTROL=ignoreboth
 
+export GREP_OPTIONS='--color=auto'
+
 export GOPATH=~/.go
 export PATH=$PATH:$GOPATH/bin
 
@@ -47,3 +49,5 @@ clucky(){
   links "$url";
 }
 alias node='env NODE_NO_READLINE=1 rlwrap node'
+
+
