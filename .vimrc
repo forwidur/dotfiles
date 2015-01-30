@@ -79,7 +79,7 @@ map <C-l> :lprev
 
 Bundle 'kien/ctrlp.vim'
 let g:ctrlp_working_path_mode = 0
-let g:ctrlp_cmd = "CtrlPBuffer"
+"let g:ctrlp_cmd = "CtrlPBuffer"
 
 Bundle 'Valloric/YouCompleteMe'
 
@@ -93,5 +93,11 @@ Bundle 'tpope/vim-obsession'
 Bundle 'tpope/vim-surround'
 
 Bundle 'bendavis78/vim-polymer'
+
+Bundle 'mileszs/ack.vim'
+
+Bundle 'ivalkeen/vim-ctrlp-tjump'
+nnoremap <c-]> :CtrlPtjump<cr>
+vnoremap <c-]> :CtrlPtjumpVisual<cr>
 
 call vundle#end()

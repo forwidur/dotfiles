@@ -46,3 +46,4 @@ clucky(){
   url=$(echo "http://www.google.com/search?hl=en&q=$@&btnI=I%27m+Feeling+Lucky&aq=f&oq=" | sed 's/ /+/g');
   links "$url";
 }
+alias node='env NODE_NO_READLINE=1 rlwrap node'
