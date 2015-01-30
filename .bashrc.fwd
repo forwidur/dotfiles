@@ -3,6 +3,9 @@ export HISTCONTROL=ignoreboth
 
 export GREP_OPTIONS='--color=auto'
 
+export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
+export LESS=' -R '
+
 export GOPATH=~/.go
 export PATH=$PATH:$GOPATH/bin
 
