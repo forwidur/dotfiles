@@ -5,6 +5,7 @@ import XMonad.Hooks.EwmhDesktops
 import System.IO
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
+import XMonad.Hooks.SetWMName
 
 --import Control.OldException
 import Control.Monad
@@ -60,7 +61,8 @@ main = xmonad $ gnomeConfig
         , focusFollowsMouse = False
         , keys       = newKeys
         , terminal   = "rxvt"
-        , modMask    = mod5Mask
+        , modMask    = mod4Mask
+        , startupHook = setWMName "LG3D"  -- Needed for Idea to work.
         }
 
 myManageHook = composeAll
