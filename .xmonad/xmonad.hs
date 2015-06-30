@@ -61,7 +61,7 @@ main = xmonad $ gnomeConfig
         , focusFollowsMouse = False
         , keys       = newKeys
         , terminal   = "rxvt"
-        , modMask    = mod4Mask
+        , modMask    = mod5Mask
         , startupHook = setWMName "LG3D"  -- Needed for Idea to work.
         }
 
