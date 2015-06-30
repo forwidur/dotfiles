@@ -7,5 +7,5 @@ rxvt.font: -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1
 urxvt.foreground: green
 urxvt.background: black
 urxvt.scrollBar_right: 1
-urxvt.saveLines: 1073741824
+urxvt.saveLines: 1073741
 urxvt.visualBell: 1
