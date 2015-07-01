@@ -4,8 +4,11 @@ rxvt.scrollBar_right: 1
 rxvt.saveLines: 1073741
 rxvt.visualBell: 1
 rxvt.font: -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1
+rxvt.modifier: mod1
 urxvt.foreground: green
 urxvt.background: black
 urxvt.scrollBar_right: 1
 urxvt.saveLines: 1073741
 urxvt.visualBell: 1
+urxvt.font: -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1
+urxvt.modifier: mod1
