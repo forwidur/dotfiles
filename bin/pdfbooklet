@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set +ex
+
+TEMPFILE=`mktemp`.pdf
+DST=${1%.pdf}-booklet.pdf
+
+pdfcrop --margins 20 $1 ${TEMPFILE}
+pdfnup --booklet true --letterpaper --outfile ${DST} ${TEMPFILE}
+echo "Created ${DST}"
