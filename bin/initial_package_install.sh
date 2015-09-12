@@ -10,7 +10,7 @@ sudo aptitude install -y \
   source-highlight \
   qbittorrent \
   xmonad \
-  urxvt \
+  rxvt-unicode \
   vim \
   vim-gtk \
   vim-youcompleteme \
