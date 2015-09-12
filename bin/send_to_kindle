@@ -1,0 +1,26 @@
+#!/usr/bin/ruby
+
+require 'mail'
+
+options = { :address              => "smtp.gmail.com",
+            :port                 => 587,
+            :domain               => 'gmail.com',
+            :user_name            => 'forwidur@gmail.com',
+            :password             => File.read(File.expand_path("~/bin/mail_pass")).strip,
+            :authentication       => 'plain',
+            :enable_starttls_auto => true  }
+
+ARGV.each { |file|
+  print "Sending '%s'\n" % file
+  Mail.deliver do
+    delivery_method :smtp, options
+    from     'forwidur@gmail.com'
+    to       "forwidur7@free.kindle.com"
+    subject  'Book'
+    body     ''
+    add_file file
+  end
+
+  print "'%s' sent!\n" % file
+}
+
