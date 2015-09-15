@@ -22,6 +22,7 @@ import XMonad.Layout.Reflect
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.FixedColumn
 import XMonad.Layout.Tabbed
+import XMonad.Util.EZConfig
 
 import qualified Data.Map as M
 import XMonad.Prompt
@@ -50,20 +51,27 @@ import Data.Ratio ((%))
 
 main :: IO ()
 main = xmonad $ gnomeConfig
-        { logHook    = myLogHookWithPP $ defaultPP {
-                 ppOrder    = take 1 . drop 2
-                 , ppTitle    = pangoColor "#003366" . shorten 120
-                 , ppUrgent   = pangoColor "red"
-                 }
-        , layoutHook = avoidStruts $ smartBorders $ myLayout
-        , handleEventHook = fullscreenEventHook
-        , manageHook = myManageHook
-        , focusFollowsMouse = False
-        , keys       = newKeys
-        , terminal   = "rxvt"
-        , modMask    = mod5Mask
-        , startupHook = setWMName "LG3D"  -- Needed for Idea to work.
-        }
+  { logHook    = myLogHookWithPP $ defaultPP {
+           ppOrder    = take 1 . drop 2
+           , ppTitle    = pangoColor "#003366" . shorten 120
+           , ppUrgent   = pangoColor "red"
+           }
+  , layoutHook = avoidStruts $ smartBorders $ myLayout
+  , handleEventHook = fullscreenEventHook
+  , manageHook = myManageHook
+  , focusFollowsMouse = False
+  , keys       = newKeys
+  , terminal   = "rxvt"
+  , modMask    = mod5Mask
+  , startupHook = setWMName "LG3D"  -- Needed for Idea to work.
+  } `additionalKeysP` multiKeys
+
+multiKeys =
+  [ ("<XF86AudioMute>",        spawn "amixer -D pulse set Master 1+ toggle")
+  , ("<XF86AudioMicMute>",     spawn "amixer -D pulse set Capture toggle")
+  , ("<XF86AudioLowerVolume>", spawn "amixer -D pulse set Master 5%- unmute")
+  , ("<XF86AudioRaiseVolume>", spawn "amixer -D pulse set Master 5%+ unmute")
+  ]
 
 myManageHook = composeAll
     [ manageHook gnomeConfig
