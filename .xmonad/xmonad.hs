@@ -66,13 +66,6 @@ main = xmonad $ gnomeConfig
   , startupHook = setWMName "LG3D"  -- Needed for Idea to work.
   } `additionalKeysP` multiKeys
 
-multiKeys =
-  [ ("<XF86AudioMute>",        spawn "amixer -D pulse set Master 1+ toggle")
-  , ("<XF86AudioMicMute>",     spawn "amixer -D pulse set Capture toggle")
-  , ("<XF86AudioLowerVolume>", spawn "amixer -D pulse set Master 5%- unmute")
-  , ("<XF86AudioRaiseVolume>", spawn "amixer -D pulse set Master 5%+ unmute")
-  ]
-
 myManageHook = composeAll
     [ manageHook gnomeConfig
     , className =? "mplayer2"          --> doFloat
@@ -137,9 +130,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
         [ ((modm, xK_b     ), sendMessage ToggleStruts)
         , ((modm, xK_p     ), shellPrompt myXPConfig)
         , ((modm, xK_grave), windowPromptGoto myXPConfig)
--- Search commands
---        , ((modm, xK_s), SM.submap $ searchEngineMap $ S.promptSearch myXPConfig)
---        , ((modm .|. shiftMask, xK_s), SM.submap $ searchEngineMap $ S.selectSearch)
+        , ((modm, xK_s), S.promptSearch myXPConfig S.google)
         , ((modm .|. controlMask, xK_x), xmonadPrompt myXPConfig)
         , ((modm,               xK_bracketright), nextWS)
         , ((modm,               xK_bracketleft ), prevWS)
@@ -149,20 +140,14 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
         , ((modm,               xK_z),            sendMessage MirrorExpand)
         , ((controlMask .|. mod1Mask, xK_l),      spawn "gnome-screensaver-command -l")
         , ((controlMask .|. mod1Mask, xK_s),      spawn "sshot")
---        , ((modm,               xK_z),     toggleWS)
         ]
 
-searchEngineMap method = M.fromList $
-       [ ((0, xK_g), method S.google)
-       , ((0, xK_l), method S.lucky)
-       , ((0, xK_h), method S.hoogle)
-       , ((0, xK_w), method S.wikipedia)
-       , ((0, xK_m), method S.imdb)
-       , ((0, xK_i), method S.isohunt)
-       , ((0, xK_a), method S.amazon)
-       , ((0, xK_y), method S.youtube)
-       , ((0, xK_d), method S.dictionary)
-       ]
+multiKeys =
+  [ ("<XF86AudioMute>",        spawn "amixer -D pulse set Master 1+ toggle")
+  , ("<XF86AudioMicMute>",     spawn "amixer -D pulse set Capture toggle")
+  , ("<XF86AudioLowerVolume>", spawn "amixer -D pulse set Master 5%- unmute")
+  , ("<XF86AudioRaiseVolume>", spawn "amixer -D pulse set Master 5%+ unmute")
+  ]
 
 keysToRemove :: XConfig Layout -> [(KeyMask, KeySym)]
 keysToRemove XConfig{modMask = modm} =
