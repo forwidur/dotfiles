@@ -164,7 +164,7 @@ keysToRemove XConfig{modMask = modm} =
 
 
 myXPConfig = defaultXPConfig {
-  font = "-*-Fixed-Bold-R-Normal-*-16-*-*-*-*-*-*-*",
+  font = "-Misc-Fixed-Medium-R-Normal-*-18-*-*-*-*-*-*-*",
   bgColor = "black",
   fgColor = "green",
   position = Top,
