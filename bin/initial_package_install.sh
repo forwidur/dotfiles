@@ -12,6 +12,7 @@ sudo apt-get install -y aptitude
 sudo aptitude install -y \
   google-chrome-beta \
   rxvt-unicode \
+  stow \
   vim \
   xmonad \
 
