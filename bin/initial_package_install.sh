@@ -10,29 +10,37 @@ sudo apt-get install -y aptitude
 
 # Essentials
 sudo aptitude install -y \
-  xmonad \
+  google-chrome-beta \
   rxvt-unicode \
+  vim \
+  xmonad \
 
 # Utils.
 sudo aptitude install -y \
   clipit \
+  geeqie \
+  google-talkplugin \
+  glances \
   qbittorrent \
+  tmux \
+  xclip \
   youtube-dl \
 
 # Dev stuff.
 sudo aptitude install -y \
-  build-essentials \
+  build-essential \
   clang \
+  cmake \
   ghc \
-  gcc \
   git \
   git-gui \
-  google-chrome-beta \
-  google-talkplugin \
+  jq \
   meld \
   source-highlight \
   octave \
-  vim \
+  openjdk-8-jdk \
+  python-pip \
+  ruby \
   vim-gtk \
   vim-youcompleteme \
 
@@ -41,3 +49,8 @@ sudo aptitude install -y \
   clementine \
   mplayer2 \
 
+
+# Misc.
+sudo pip install speedtest-cli
+curl -sSL https://get.docker.io/ubuntu/ | sudo sh  # Docker.
+sudo bash -c 'curl https://godeb.s3.amazonaws.com/godeb-amd64.tar.gz | tar xzO > /usr/local/bin/godeb; chmod 755 /usr/local/bin/godeb' # Godeb.
