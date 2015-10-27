@@ -10,6 +10,7 @@ sudo apt-get install -y aptitude
 
 # Essentials
 sudo aptitude install -y \
+  gnome-panel \
   google-chrome-beta \
   rxvt-unicode \
   stow \
@@ -58,3 +59,7 @@ sudo bash -c 'curl https://godeb.s3.amazonaws.com/godeb-amd64.tar.gz | tar xzO >
 
 # Install the xsession option.
 sudo bash -c 'wget -O/usr/share/xsessions/xsession.desktop http://uone.cu.cc/~fwd/xsession.desktop'
+
+# Vim stuff.
+mkdir -p ~/.vim/bak
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
