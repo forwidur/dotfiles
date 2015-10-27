@@ -23,6 +23,7 @@ sudo aptitude install -y \
   geeqie \
   google-talkplugin \
   glances \
+  htop \
   qbittorrent \
   tmux \
   xclip \
