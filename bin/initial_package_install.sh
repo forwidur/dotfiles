@@ -55,3 +55,6 @@ sudo aptitude install -y \
 sudo pip install speedtest-cli
 curl -sSL https://get.docker.io/ubuntu/ | sudo sh  # Docker.
 sudo bash -c 'curl https://godeb.s3.amazonaws.com/godeb-amd64.tar.gz | tar xzO > /usr/local/bin/godeb; chmod 755 /usr/local/bin/godeb' # Godeb.
+
+# Install the xsession option.
+sudo bash -c 'wget -O/usr/share/xsessions/xsession.desktop http://uone.cu.cc/~fwd/xsession.desktop'
