@@ -21,9 +21,11 @@ sudo aptitude install -y \
 sudo aptitude install -y \
   clipit \
   geeqie \
-  google-talkplugin \
   glances \
+  google-talkplugin \
   htop \
+  iotop \
+  powertop \
   qbittorrent \
   tmux \
   xclip \
@@ -64,3 +66,8 @@ sudo bash -c 'wget -O/usr/share/xsessions/xsession.desktop http://uone.cu.cc/~fw
 # Vim stuff.
 mkdir -p ~/.vim/bak
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+# Slack client.
+sudo apt-add-repository -y ppa:rael-gc/scudcloud
+sudo aptitude update
+sudo aptitude install scudcloud
