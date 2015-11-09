@@ -75,3 +75,8 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 sudo apt-add-repository -y ppa:rael-gc/scudcloud
 sudo aptitude update
 sudo aptitude install scudcloud
+
+# Zeal.
+sudo add-apt-repository -y ppa:zeal-developers/ppa
+sudo aptitude update
+sudo aptitude install zeal
