@@ -5,6 +5,10 @@ wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-ke
 sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list'
 sudo sh -c 'echo "deb http://dl.google.com/linux/talkplugin/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 
+# Docker repo.
+RELEASE_NAME=`lsb_release -cs`
+sudo bash -c "echo deb https://apt.dockerproject.org/repo ubuntu-${RELEASE_NAME} main > /etc/apt/sources.list.d/docker.list"
+
 sudo apt-get update
 sudo apt-get install -y aptitude
 
@@ -36,6 +40,7 @@ sudo aptitude install -y \
   build-essential \
   clang \
   cmake \
+  docker-engine \
   ghc \
   git \
   git-gui \
@@ -57,7 +62,6 @@ sudo aptitude install -y \
 
 # Misc.
 sudo pip install speedtest-cli
-curl -sSL https://get.docker.io/ubuntu/ | sudo sh  # Docker.
 sudo bash -c 'curl https://godeb.s3.amazonaws.com/godeb-amd64.tar.gz | tar xzO > /usr/local/bin/godeb; chmod 755 /usr/local/bin/godeb' # Godeb.
 
 # Install the xsession option.
