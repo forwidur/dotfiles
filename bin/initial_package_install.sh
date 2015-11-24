@@ -27,8 +27,10 @@ sudo aptitude install -y \
   geeqie \
   glances \
   google-talkplugin \
+  gparted \
   htop \
   iotop \
+  pmount \
   powertop \
   qbittorrent \
   tmux \
