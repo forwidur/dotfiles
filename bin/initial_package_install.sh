@@ -63,7 +63,7 @@ sudo aptitude install -y \
 
 
 # Misc.
-sudo pip install speedtest-cli
+sudo pip install -y speedtest-cli
 sudo bash -c 'curl https://godeb.s3.amazonaws.com/godeb-amd64.tar.gz | tar xzO > /usr/local/bin/godeb; chmod 755 /usr/local/bin/godeb' # Godeb.
 
 # Install the xsession option.
@@ -76,9 +76,9 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # Slack client.
 sudo apt-add-repository -y ppa:rael-gc/scudcloud
 sudo aptitude update
-sudo aptitude install scudcloud
+sudo aptitude install -y scudcloud
 
 # Zeal.
 sudo add-apt-repository -y ppa:zeal-developers/ppa
 sudo aptitude update
-sudo aptitude install zeal
+sudo aptitude install -y zeal
