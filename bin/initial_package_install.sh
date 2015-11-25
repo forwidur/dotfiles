@@ -34,6 +34,7 @@ sudo aptitude install -y \
   powertop \
   qbittorrent \
   tmux \
+  xbacklight \
   xclip \
   youtube-dl \
 

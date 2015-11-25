@@ -143,10 +143,12 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
         ]
 
 multiKeys =
-  [ ("<XF86AudioMute>",        spawn "amixer -D pulse set Master 1+ toggle")
-  , ("<XF86AudioMicMute>",     spawn "amixer -D pulse set Capture toggle")
-  , ("<XF86AudioLowerVolume>", spawn "amixer -D pulse set Master 5%- unmute")
-  , ("<XF86AudioRaiseVolume>", spawn "amixer -D pulse set Master 5%+ unmute")
+  [ ("<XF86AudioMute>",         spawn "amixer -D pulse set Master 1+ toggle")
+  , ("<XF86AudioMicMute>",      spawn "amixer -D pulse set Capture toggle")
+  , ("<XF86AudioLowerVolume>",  spawn "amixer -D pulse set Master 5%- unmute")
+  , ("<XF86AudioRaiseVolume>",  spawn "amixer -D pulse set Master 5%+ unmute")
+  , ("<XF86MonBrightnessUp>",   spawn "xbacklight -inc 5")
+  , ("<XF86MonBrightnessDown>", spawn "xbacklight -dec 5")
   ]
 
 keysToRemove :: XConfig Layout -> [(KeyMask, KeySym)]
