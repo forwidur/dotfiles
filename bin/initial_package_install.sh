@@ -62,6 +62,13 @@ sudo aptitude install -y \
   clementine \
   mplayer2 \
 
+# Power management
+sudo aptitude install -y \
+  acpi-call-dkms \
+  tlp \
+  tlp-rdw \
+  tp-smapi-dkms \
+
 
 # Misc.
 sudo pip install -y speedtest-cli
