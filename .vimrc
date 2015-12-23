@@ -58,6 +58,12 @@ autocmd BufWritePre * :%s/\s\+$//e
 autocmd BufWritePre *.go GoFmt
 autocmd FileType go set noet
 
+" Persistent undo.
+if has("persistent_undo")
+    set undodir=~/.undodir/
+    set undofile
+endif
+
 set history=500
 set undolevels=300
 
@@ -102,5 +108,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'ivalkeen/vim-ctrlp-tjump'
 nnoremap <c-]> :CtrlPtjump<cr>
 vnoremap <c-]> :CtrlPtjumpVisual<cr>
+
+Bundle 'mbbill/undotree'
 
 call vundle#end()
