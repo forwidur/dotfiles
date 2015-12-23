@@ -30,6 +30,7 @@ sudo aptitude install -y \
   gparted \
   htop \
   iotop \
+  lame \
   pmount \
   powertop \
   qbittorrent \
