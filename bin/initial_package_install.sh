@@ -9,6 +9,9 @@ sudo sh -c 'echo "deb http://dl.google.com/linux/talkplugin/deb/ stable main" >>
 RELEASE_NAME=`lsb_release -cs`
 sudo bash -c "echo deb https://apt.dockerproject.org/repo ubuntu-${RELEASE_NAME} main > /etc/apt/sources.list.d/docker.list"
 
+# Oracle Java.
+sudo add-apt-repository ppa:webupd8team/java
+
 sudo apt-get update
 sudo apt-get install -y aptitude
 
