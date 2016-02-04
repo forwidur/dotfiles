@@ -91,6 +91,9 @@ let g:ctrlp_working_path_mode = 0
 "let g:ctrlp_cmd = "CtrlPBuffer"
 
 Bundle 'Valloric/YouCompleteMe'
+nnoremap <leader>gd :YcmCompleter GoTo<CR>
+nnoremap <leader>gs :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gi :YcmCompleter GoToInclude<CR>
 
 Bundle 'lukerandall/haskellmode-vim'
 au BufEnter *.hs compiler ghc
