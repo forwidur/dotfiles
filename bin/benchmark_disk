@@ -1,0 +1,19 @@
+#!/bin/dash
+
+echo "Benchmarking random reads."
+fio --randrepeat=1 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=test \
+    --filename=test --bs=4k --iodepth=64 --size=4G --readwrite=randread
+
+echo
+echo "Benchmarking random writes."
+fio --randrepeat=1 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=test \
+    --filename=test --bs=4k --iodepth=64 --size=4G --readwrite=randwrite
+
+
+echo
+echo "Benchmarking random read/write."
+fio --randrepeat=1 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=test \
+    --filename=test --bs=4k --iodepth=64 --size=4G --readwrite=randrw       \
+    --rwmixread=75
+
+rm test

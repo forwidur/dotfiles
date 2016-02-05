@@ -27,6 +27,7 @@ sudo aptitude install -y \
 # Utils.
 sudo aptitude install -y \
   clipit \
+  fio \
   geeqie \
   glances \
   google-talkplugin \
