@@ -33,6 +33,7 @@ sudo aptitude install -y \
   google-talkplugin \
   gparted \
   htop \
+  ioping \
   iotop \
   lame \
   pmount \

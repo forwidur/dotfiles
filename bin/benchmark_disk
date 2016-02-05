@@ -17,3 +17,7 @@ fio --randrepeat=1 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=test \
     --rwmixread=75
 
 rm test
+
+echo
+echo "Measuring drive latency."
+./ioping -c 10 .
