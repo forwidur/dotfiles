@@ -39,6 +39,7 @@ sudo aptitude install -y \
   pmount \
   powertop \
   qbittorrent \
+  texlive-extra-utils \
   tmux \
   xbacklight \
   xclip \
