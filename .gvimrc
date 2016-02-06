@@ -1,6 +1,5 @@
-:colorscheme desert
-set lines=40 columns=80
+colorscheme koehler
 set stal=2
-"set gfn=Terminus\ 10
-set guioptions-=T
-
+set gfn=DejaVu\ Sans\ Mono\ 9
+set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
