@@ -37,6 +37,8 @@ set completeopt=longest,menuone
 set scrolloff=2
 set sidescrolloff=5
 
+set laststatus=2
+
 " Move tabs with alt + left|right
 nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
@@ -133,7 +135,7 @@ nmap <Leader>C :ClangFormatAutoToggle<CR>
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-set laststatus=2
+let g:airline_theme='sol'
 
 Plugin 'justinmk/vim-syntax-extra'
 
