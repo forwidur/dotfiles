@@ -135,4 +135,6 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 set laststatus=2
 
+Plugin 'justinmk/vim-syntax-extra'
+
 call vundle#end()
