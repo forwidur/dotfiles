@@ -1,4 +1,5 @@
 syntax on
+color desertink
 filetype on
 filetype plugin on
 autocmd FileType *      set formatoptions=tcql nocindent comments&
