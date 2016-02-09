@@ -34,6 +34,9 @@ set showcmd
 set wildmenu
 set completeopt=longest,menuone
 
+set scrolloff=2
+set sidescrolloff=5
+
 " Move tabs with alt + left|right
 nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
