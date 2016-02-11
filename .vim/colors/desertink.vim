@@ -251,7 +251,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   endfun
   " }}}
 
-  call <SID>X("Normal", "ffffff", "222222", "")
+  call <SID>X("Normal", "ffffff", "000000", "")
   call <SID>X("NonText", "addbe7", "3D3D3D", "bold")
 
   highlight! link TabLineFill Normal
