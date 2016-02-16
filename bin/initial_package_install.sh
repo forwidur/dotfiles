@@ -47,6 +47,7 @@ sudo aptitude install -y \
 
 # Dev stuff.
 sudo aptitude install -y \
+  ack-grep \
   build-essential \
   clang \
   cmake \
