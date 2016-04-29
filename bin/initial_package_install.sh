@@ -1,16 +1,19 @@
 #!/bin/sh
 
 # Adds Google repos.
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list'
-sudo sh -c 'echo "deb http://dl.google.com/linux/talkplugin/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list'
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/talkplugin/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 
 # Docker repo.
+sudo apt-get install apt-transport-https ca-certificates
+sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 \
+    --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
 RELEASE_NAME=`lsb_release -cs`
 sudo bash -c "echo deb https://apt.dockerproject.org/repo ubuntu-${RELEASE_NAME} main > /etc/apt/sources.list.d/docker.list"
 
 # Oracle Java.
-sudo add-apt-repository ppa:webupd8team/java
+sudo add-apt-repository -y ppa:webupd8team/java
 
 sudo apt-get update
 sudo apt-get install -y aptitude
