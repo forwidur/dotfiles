@@ -62,6 +62,7 @@ sudo aptitude install -y \
   openjdk-8-jdk \
   python-pip \
   ruby \
+  upx \
   vim-gtk \
   vim-youcompleteme \
 
