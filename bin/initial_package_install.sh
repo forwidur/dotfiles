@@ -57,11 +57,11 @@ sudo aptitude install -y \
   git-gui \
   jq \
   meld \
-  source-highlight \
   octave \
   openjdk-8-jdk \
   python-pip \
   ruby \
+  source-highlight \
   upx \
   vim-gtk \
   vim-youcompleteme \
