@@ -98,6 +98,11 @@ sudo apt-add-repository -y ppa:rael-gc/scudcloud
 sudo aptitude update
 sudo aptitude install -y scudcloud
 
+# Telegram client.
+sudo add-apt-repository ppa:atareao/telegram
+sudo aptitude update
+sudo aptitude install -y telegram
+
 # Zeal.
 sudo add-apt-repository -y ppa:zeal-developers/ppa
 sudo aptitude update
