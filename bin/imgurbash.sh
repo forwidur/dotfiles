@@ -6,7 +6,7 @@
 
 # Required: curl
 #
-# Optional: xsel or xclip for automatically putting the URLs on the X selection 
+# Optional: xsel or xclip for automatically putting the URLs on the X selection
 # for easy pasting
 #
 # Instructions:
@@ -14,15 +14,15 @@
 # 	mv ~/Downloads/imgurbash.sh ~/bin/imgur
 # Make it executable:
 # 	chmod +x ~/bin/imgur
-# Optional, since Alan kindly provided an API key for this script: stick your 
+# Optional, since Alan kindly provided an API key for this script: stick your
 # API key in the top:
 # 	vim ~/bin/imgur
 # Upload an image:
 # 	imgur images/hilarious/manfallingover.jpg
 # Upload multiple images:
 # 	imgur images/delicious/cake.png images/exciting/bungeejump.jpg
-# The URLs will be displayed (and the delete page's URLs will be displayed on 
-# stderr). If you have xsel or xclip the URLs will also be put on the X 
+# The URLs will be displayed (and the delete page's URLs will be displayed on
+# stderr). If you have xsel or xclip the URLs will also be put on the X
 # selection, which you can usually paste with a middle click.
 
 # API Key provided by Alan@imgur.com
@@ -75,26 +75,26 @@ while [ $# -gt 0 ]; do
 	fi
 
 	# upload the image
-	response=$(curl -F "key=$apikey" -H "Expect: " -F "image=@$file" \
-		http://imgur.com/api/upload.xml 2>/dev/null)
-	# the "Expect: " header is to get around a problem when using this through 
+	response=$(curl -sH "Authorization: Client-ID 3e7a4deb7ac67da" \
+      -F "image=@$file" "https://api.imgur.com/3/upload" 2>/dev/null)
+	# the "Expect: " header is to get around a problem when using this through
 	# the Squid proxy. Not sure if it's a Squid bug or what.
 	if [ $? -ne 0 ]; then
 		echo "Upload failed" >&2
 		errors=true
 		continue
-	elif [ $(echo $response | grep -c "<error_msg>") -gt 0 ]; then
+	elif [ $(echo $response | grep -c "error") -gt 0 ]; then
 		echo "Error message from imgur:" >&2
-		echo $response | sed -r 's/.*<error_msg>(.*)<\/error_msg>.*/\1/' >&2
+		echo $response | sed -r 's/.*error":"([^"]*)".*/\1/' >&2
 		errors=true
 		continue
 	fi
 
 	# parse the response and output our stuff
-	url=$(echo $response | sed -r 's/.*<original_image>(.*)<\/original_image>.*/\1/')
-	deleteurl=$(echo $response | sed -r 's/.*<delete_page>(.*)<\/delete_page>.*/\1/')
+	url=$(echo $response | sed -r 's/.*link":"([^"]*)".*/\1/' | sed -r 's#\\##g')
+#	deleteurl=$(echo $response | sed -r 's/.*<delete_page>(.*)<\/delete_page>.*/\1/')
 	echo $url
-	echo "Delete page: $deleteurl" >&2
+#	echo "Delete page: $deleteurl" >&2
 
 	# append the URL to a string so we can put them all on the clipboard later
 	clip="$clip$url
