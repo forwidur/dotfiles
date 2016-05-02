@@ -54,8 +54,10 @@ else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 
+" Convenience mappings.
 map <F2> :w
 inoremap  :w
+inoremap jj <Esc>
 
 " Remove trailing whitespace.
 autocmd BufWritePre * :%s/\s\+$//e
