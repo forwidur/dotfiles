@@ -42,6 +42,7 @@ sudo aptitude install -y \
   pmount \
   powertop \
   qbittorrent \
+  speedtest-cli \
   texlive-extra-utils \
   tmux \
   xbacklight \
