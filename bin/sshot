@@ -1,5 +1,5 @@
 #!/bin/sh
 
-maim -s ~/tmp/screenshot.png
+maim --hidecursor -s ~/tmp/screenshot.png
 imgurbash.sh ~/tmp/screenshot.png
 xdg-open "`xclip -o`"
