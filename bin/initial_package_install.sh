@@ -68,6 +68,7 @@ sudo aptitude install -y \
   upx \
   vim-gtk \
   vim-youcompleteme \
+  zeal \
 
 # Media.
 sudo aptitude install -y \
@@ -102,8 +103,3 @@ sudo aptitude install -y scudcloud
 sudo add-apt-repository ppa:atareao/telegram
 sudo aptitude update
 sudo aptitude install -y telegram
-
-# Zeal.
-sudo add-apt-repository -y ppa:zeal-developers/ppa
-sudo aptitude update
-sudo aptitude install -y zeal
