@@ -73,7 +73,7 @@ sudo aptitude install -y \
 # Media.
 sudo aptitude install -y \
   clementine \
-  mplayer2 \
+  mplayer \
 
 # Power management
 sudo aptitude install -y \
