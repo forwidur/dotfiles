@@ -112,8 +112,6 @@ Bundle 'tpope/vim-obsession'
 
 Bundle 'tpope/vim-surround'
 
-Bundle 'bendavis78/vim-polymer'
-
 Bundle 'mileszs/ack.vim'
 
 Bundle 'ivalkeen/vim-ctrlp-tjump'
