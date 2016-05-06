@@ -42,6 +42,7 @@ sudo aptitude install -y \
   pmount \
   powertop \
   qbittorrent \
+  redshift-gtk \
   speedtest-cli \
   texlive-extra-utils \
   tmux \
