@@ -8,4 +8,5 @@ STDIN.each do |line|
    catName = "%s_%d-%d.pdf" % [ File.basename(src, ".pdf"), from, to ]
    `pdftk #{src} cat #{from}-#{to} output #{catName}`
    `pdfbooklet #{catName}`
+   `rm #{catName}`
 end
