@@ -95,6 +95,7 @@ let g:syntastic_always_populate_loc_list = 1
 map <F3> :SyntasticCheck
 map <C-k> :lnext
 map <C-l> :lprev
+let g:syntastic_go_checkers = ['go']
 
 Bundle 'kien/ctrlp.vim'
 let g:ctrlp_working_path_mode = 0
