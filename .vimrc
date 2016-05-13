@@ -11,7 +11,9 @@ set backspace=indent,eol,start
 
 set autoindent
 set autowrite
+
 set expandtab
+autocmd FileType make setlocal noexpandtab
 
 set backupdir=~/.vim/bak
 set directory=~/.vim/bak
