@@ -46,6 +46,7 @@ sudo aptitude install -y \
   speedtest-cli \
   texlive-extra-utils \
   tmux \
+  tsocks \
   xbacklight \
   xclip \
   youtube-dl \
