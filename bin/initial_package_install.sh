@@ -102,9 +102,8 @@ sudo aptitude install -y \
   wireshark-gtk \
 
 
-# Misc.
-sudo pip install -y speedtest-cli
-sudo bash -c 'curl https://godeb.s3.amazonaws.com/godeb-amd64.tar.gz | tar xzO > /usr/local/bin/godeb; chmod 755 /usr/local/bin/godeb' # Godeb.
+# Godeb.
+sudo bash -c 'curl https://godeb.s3.amazonaws.com/godeb-amd64.tar.gz | tar xzO > /usr/local/bin/godeb; chmod 755 /usr/local/bin/godeb'
 
 # Install the xsession option.
 sudo bash -c 'wget -O/usr/share/xsessions/xsession.desktop http://uone.cu.cc/~fwd/xsession.desktop'
