@@ -31,6 +31,7 @@ sudo aptitude install -y \
 # Utils.
 sudo aptitude install -y \
   clipit \
+  ethtool \
   fio \
   geeqie \
   glances \
@@ -40,6 +41,7 @@ sudo aptitude install -y \
   ioping \
   iotop \
   lame \
+  nmap \
   pmount \
   powertop \
   qbittorrent \
@@ -48,6 +50,7 @@ sudo aptitude install -y \
   texlive-extra-utils \
   tmux \
   tsocks \
+  wireless-tools \
   xbacklight \
   xclip \
   youtube-dl \
@@ -85,6 +88,13 @@ sudo aptitude install -y \
   tlp \
   tlp-rdw \
   tp-smapi-dkms \
+
+# Hacky stuff.
+sudo aptitude install -y \
+  arp-scan \
+  kismet \
+  kismet-plugins \
+  wireshark-gtk \
 
 
 # Misc.
