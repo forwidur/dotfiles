@@ -36,6 +36,7 @@ sudo aptitude install -y \
 sudo aptitude install -y \
   clipit \
   ethtool \
+  evince \
   fio \
   geeqie \
   glances \
