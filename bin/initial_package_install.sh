@@ -84,6 +84,7 @@ sudo aptitude install -y \
 
 # Power management
 sudo aptitude install -y \
+  acpi \
   acpi-call-dkms \
   tlp \
   tlp-rdw \
