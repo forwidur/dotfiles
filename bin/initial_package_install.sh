@@ -21,6 +21,7 @@ sudo apt-get install -y aptitude
 # Essentials
 sudo aptitude install -y \
   gnome-panel \
+  gnome-session-flashback \
   google-chrome-beta \
   rxvt-unicode \
   stow \
