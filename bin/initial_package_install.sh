@@ -18,15 +18,19 @@ sudo add-apt-repository -y ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install -y aptitude
 
-# Essentials
+# Environment.
 sudo aptitude install -y \
   gnome-panel \
   gnome-session-flashback \
+  xmonad \
+  xorg \
+
+# Essentials
+sudo aptitude install -y \
   google-chrome-beta \
   rxvt-unicode \
   stow \
   vim \
-  xmonad \
 
 # Utils.
 sudo aptitude install -y \
