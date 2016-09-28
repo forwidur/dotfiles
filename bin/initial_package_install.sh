@@ -35,6 +35,7 @@ sudo aptitude install -y \
 # Utils.
 sudo aptitude install -y \
   clipit \
+  cmatrix \
   ethtool \
   evince \
   fio \
