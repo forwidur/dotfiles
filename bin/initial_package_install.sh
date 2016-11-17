@@ -105,3 +105,8 @@ sudo aptitude install -y scudcloud
 sudo add-apt-repository ppa:atareao/telegram
 sudo aptitude update
 sudo aptitude install -y telegram
+
+# Boot-repair.
+sudo add-apt-repository ppa:yannubuntu/boot-repair
+sudo aptitude update
+sudo aptitude install -y boot-repair
