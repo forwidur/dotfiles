@@ -128,3 +128,10 @@ sudo aptitude install -y telegram
 sudo add-apt-repository ppa:yannubuntu/boot-repair
 sudo aptitude update
 sudo aptitude install -y boot-repair
+
+# Tor
+sudo sh -c "echo deb http://deb.torproject.org/torproject.org $RELEASE_NAME main > /etc/apt/sources.list.d/tor.list"
+gpg --keyserver keys.gnupg.net --recv A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89
+gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | sudo apt-key add -
+sudo aptitude update
+sudo aptitude install tor-browser
