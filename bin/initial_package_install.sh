@@ -18,18 +18,26 @@ sudo add-apt-repository -y ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install -y aptitude
 
-# Essentials
+# Environment.
 sudo aptitude install -y \
   gnome-panel \
+  gnome-session-flashback \
+  xmonad \
+  xorg \
+
+# Essentials
+sudo aptitude install -y \
   google-chrome-beta \
   rxvt-unicode \
   stow \
   vim \
-  xmonad \
 
 # Utils.
 sudo aptitude install -y \
   clipit \
+  cmatrix \
+  ethtool \
+  evince \
   fio \
   geeqie \
   glances \
@@ -39,6 +47,7 @@ sudo aptitude install -y \
   ioping \
   iotop \
   lame \
+  nmap \
   pmount \
   powertop \
   qbittorrent \
@@ -46,6 +55,8 @@ sudo aptitude install -y \
   speedtest-cli \
   texlive-extra-utils \
   tmux \
+  tsocks \
+  wireless-tools \
   xbacklight \
   xclip \
   youtube-dl \
@@ -79,15 +90,22 @@ sudo aptitude install -y \
 
 # Power management
 sudo aptitude install -y \
+  acpi \
   acpi-call-dkms \
   tlp \
   tlp-rdw \
   tp-smapi-dkms \
 
+# Hacky stuff.
+sudo aptitude install -y \
+  arp-scan \
+  kismet \
+  kismet-plugins \
+  wireshark-gtk \
 
-# Misc.
-sudo pip install -y speedtest-cli
-sudo bash -c 'curl https://godeb.s3.amazonaws.com/godeb-amd64.tar.gz | tar xzO > /usr/local/bin/godeb; chmod 755 /usr/local/bin/godeb' # Godeb.
+
+# Godeb.
+sudo bash -c 'curl https://godeb.s3.amazonaws.com/godeb-amd64.tar.gz | tar xzO > /usr/local/bin/godeb; chmod 755 /usr/local/bin/godeb'
 
 # Install the xsession option.
 sudo bash -c 'wget -O/usr/share/xsessions/xsession.desktop http://uone.cu.cc/~fwd/xsession.desktop'
