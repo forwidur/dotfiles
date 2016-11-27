@@ -6,7 +6,7 @@ sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/talkplugin/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 
 # Docker repo.
-sudo apt-get install apt-transport-https ca-certificates
+sudo apt-get install -y apt-transport-https ca-certificates
 sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 \
     --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
 RELEASE_NAME=`lsb_release -cs`
@@ -120,12 +120,12 @@ sudo aptitude update
 sudo aptitude install -y scudcloud
 
 # Telegram client.
-sudo add-apt-repository ppa:atareao/telegram
+sudo add-apt-repository -y ppa:atareao/telegram
 sudo aptitude update
 sudo aptitude install -y telegram
 
 # Boot-repair.
-sudo add-apt-repository ppa:yannubuntu/boot-repair
+sudo add-apt-repository -y ppa:yannubuntu/boot-repair
 sudo aptitude update
 sudo aptitude install -y boot-repair
 
@@ -134,4 +134,4 @@ sudo sh -c "echo deb http://deb.torproject.org/torproject.org $RELEASE_NAME main
 gpg --keyserver keys.gnupg.net --recv A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89
 gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | sudo apt-key add -
 sudo aptitude update
-sudo aptitude install tor-browser
+sudo aptitude install -y tor-browser
