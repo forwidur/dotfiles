@@ -48,6 +48,7 @@ sudo aptitude install -y \
   iotop \
   lame \
   nmap \
+  pavucontrol \
   pmount \
   powertop \
   qbittorrent \
