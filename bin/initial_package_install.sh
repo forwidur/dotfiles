@@ -74,7 +74,6 @@ sudo aptitude install -y \
   git-gui \
   jq \
   meld \
-  octave \
   openjdk-8-jdk \
   python-pip \
   ruby \
@@ -83,6 +82,17 @@ sudo aptitude install -y \
   vim-gtk \
   vim-youcompleteme \
   zeal \
+
+# Datascience stuff.
+sudo aptitude install -y \
+  ipython \
+  ipython-notebook \
+  octave \
+  python-matplotlib \
+  python-numpy \
+  python-pandas \
+  python-scipy \
+  python-sympy \
 
 # Media.
 sudo aptitude install -y \
