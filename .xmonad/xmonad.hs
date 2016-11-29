@@ -140,6 +140,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
         , ((modm,               xK_z),            sendMessage MirrorExpand)
         , ((controlMask .|. mod1Mask, xK_l),      spawn "gnome-screensaver-command -l")
         , ((controlMask .|. mod1Mask, xK_s),      spawn "sshot")
+        , ((controlMask .|. mod1Mask, xK_r),      spawn "killall -USR1 redshift")
         ]
 
 multiKeys =
