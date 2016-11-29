@@ -144,5 +144,6 @@ sudo aptitude install -y boot-repair
 sudo sh -c "echo deb http://deb.torproject.org/torproject.org $RELEASE_NAME main > /etc/apt/sources.list.d/tor.list"
 gpg --keyserver keys.gnupg.net --recv A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89
 gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | sudo apt-key add -
+sudo add-apt-repository -y ppa:webupd8team/tor-browser
 sudo aptitude update
 sudo aptitude install -y tor-browser
