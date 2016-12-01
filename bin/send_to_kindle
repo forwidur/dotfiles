@@ -2,11 +2,16 @@
 
 require 'mail'
 
+automated_config = "~/.automated_gmail"
+
+
+load(File.expand_path(automated_config))
+
 options = { :address              => "smtp.gmail.com",
             :port                 => 587,
             :domain               => 'gmail.com',
-            :user_name            => 'forwidur@gmail.com',
-            :password             => File.read(File.expand_path("~/bin/mail_pass")).strip,
+            :user_name            => $address,
+            :password             => $pass,
             :authentication       => 'plain',
             :enable_starttls_auto => true  }
 
@@ -14,7 +19,7 @@ ARGV.each { |file|
   print "Sending '%s'\n" % file
   Mail.deliver do
     delivery_method :smtp, options
-    from     'forwidur@gmail.com'
+    from     "Book Elf <%s>" % $address
     to       "forwidur7@free.kindle.com"
     subject  'Book'
     body     ''
