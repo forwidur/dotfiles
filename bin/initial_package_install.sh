@@ -54,6 +54,7 @@ sudo aptitude install -y \
   qbittorrent \
   redshift-gtk \
   speedtest-cli \
+  ssmtp \
   texlive-extra-utils \
   tmux \
   tsocks \
