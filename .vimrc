@@ -146,4 +146,7 @@ let g:airline_theme='sol'
 
 Plugin 'justinmk/vim-syntax-extra'
 
+Bundle 'mrtazz/simplenote.vim'
+source ~/.simplenoterc
+
 call vundle#end()
