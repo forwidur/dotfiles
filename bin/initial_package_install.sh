@@ -99,6 +99,7 @@ sudo aptitude install -y \
 sudo aptitude install -y \
   clementine \
   mplayer \
+  mpv \
 
 # Power management
 sudo aptitude install -y \
