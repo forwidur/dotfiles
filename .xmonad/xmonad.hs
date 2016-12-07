@@ -68,6 +68,7 @@ main = xmonad $ gnomeConfig
 
 myManageHook = composeAll
     [ manageHook gnomeConfig
+    , className =? "mpv"               --> doFloat
     , className =? "mplayer2"          --> doFloat
     , className =? "Gimp"              --> doFloat
     , resource  =? "desktop_window"    --> doIgnore
