@@ -42,6 +42,8 @@ set sidescrolloff=5
 
 set laststatus=2
 
+nmap <F1> <nop>
+
 " Move tabs with alt + left|right
 nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
