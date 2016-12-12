@@ -47,7 +47,6 @@ sudo aptitude install -y \
   ioping \
   iotop \
   lame \
-  nmap \
   pavucontrol \
   pmount \
   powertop \
@@ -57,8 +56,6 @@ sudo aptitude install -y \
   ssmtp \
   texlive-extra-utils \
   tmux \
-  tsocks \
-  wireless-tools \
   xbacklight \
   xclip \
   youtube-dl \
@@ -109,11 +106,15 @@ sudo aptitude install -y \
   tlp-rdw \
   tp-smapi-dkms \
 
-# Hacky stuff.
+# Network stuff.
 sudo aptitude install -y \
   arp-scan \
+  hping3 \
   kismet \
   kismet-plugins \
+  nmap \
+  tsocks \
+  wireless-tools \
   wireshark-gtk \
 
 
