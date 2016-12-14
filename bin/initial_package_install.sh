@@ -48,6 +48,7 @@ sudo aptitude install -y \
   htop \
   ioping \
   iotop \
+  maim \
   lame \
   pavucontrol \
   pmount \
