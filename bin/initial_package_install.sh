@@ -20,8 +20,10 @@ sudo apt-get install -y aptitude
 
 # Environment.
 sudo aptitude install -y \
+  alsa-utils \
   gnome-panel \
   gnome-session-flashback \
+  lightdm-gtk-greeter \
   xmonad \
   xorg \
 
