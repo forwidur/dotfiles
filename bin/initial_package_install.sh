@@ -23,7 +23,7 @@ sudo aptitude install -y \
   alsa-utils \
   gnome-panel \
   gnome-session-flashback \
-  lightdm-gtk-greeter \
+  lightdm \
   xmonad \
   xorg \
 
