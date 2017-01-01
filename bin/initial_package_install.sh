@@ -51,6 +51,7 @@ sudo aptitude install -y \
   maim \
   lame \
   pavucontrol \
+  pdftk \
   pmount \
   powertop \
   qbittorrent \
