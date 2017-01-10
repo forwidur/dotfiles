@@ -43,13 +43,14 @@ sudo aptitude install -y \
   fio \
   geeqie \
   glances \
+  go-mtpfs \
   google-talkplugin \
   gparted \
   htop \
   ioping \
   iotop \
-  maim \
   lame \
+  maim \
   pavucontrol \
   pdftk \
   pmount \
