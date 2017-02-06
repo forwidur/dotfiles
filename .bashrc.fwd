@@ -53,6 +53,24 @@ clucky(){
   url=$(echo "http://www.google.com/search?hl=en&q=$@&btnI=I%27m+Feeling+Lucky&aq=f&oq=" | sed 's/ /+/g');
   links "$url";
 }
+
+mp3recode() {
+  preset=$1; shift;
+  echo -e "Using preset \033[1;93m$preset\033[0m"
+  for i do
+    echo "$i"
+    lame --quiet --preset $preset "$i" tmp && mv tmp "$i"
+  done
+}
+
+mp3parallelrecode() {
+  preset=$1; shift;
+  files=("$@")  # This way files is still an array.
+  echo -e "Parallel recode using preset \033[1;93m$preset\033[0m"
+  parallel -u "echo {};  \
+      tmpf=\`mktemp\`; \
+      lame --quiet --preset $preset {} \$tmpf && \
+      mv \$tmpf {}" ::: "${files[@]}"
+}
+
 alias node='env NODE_NO_READLINE=1 rlwrap node'
-
-
