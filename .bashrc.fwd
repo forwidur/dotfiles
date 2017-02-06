@@ -59,7 +59,8 @@ mp3recode() {
   echo -e "Using preset \033[1;93m$preset\033[0m"
   for i do
     echo "$i"
-    lame --quiet --preset $preset "$i" tmp && mv tmp "$i"
+    tmpf=`mktemp`
+    lame --quiet --preset $preset "$i" $tmpf && mv $tmpf "$i"
   done
 }
 
