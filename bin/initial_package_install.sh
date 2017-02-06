@@ -49,8 +49,8 @@ sudo aptitude install -y \
   htop \
   ioping \
   iotop \
-  lame \
   maim \
+  parallel \
   pavucontrol \
   pdftk \
   pmount \
@@ -100,6 +100,7 @@ sudo aptitude install -y \
 # Media.
 sudo aptitude install -y \
   clementine \
+  lame \
   mplayer \
   mpv \
 
