@@ -5,6 +5,7 @@ rxvt.saveLines: 10737
 rxvt.visualBell: 1
 rxvt.font: -misc-fixed-medium-r-normal--13-*-*-*-c-*-iso10646-1
 rxvt.modifier: mod1
+rxvt.print-pipe: "cat > /dev/null"
 urxvt.foreground: green
 urxvt.background: black
 urxvt.scrollBar_right: 1
@@ -12,3 +13,4 @@ urxvt.saveLines: 10737
 urxvt.visualBell: 1
 urxvt.font: -misc-fixed-medium-r-normal--13-*-*-*-c-*-iso10646-1
 urxvt.modifier: mod1
+urxvt.print-pipe: "cat > /dev/null"
