@@ -60,6 +60,7 @@ endif
 
 " Convenience mappings.
 map <F2> :w
+noremap  :w
 inoremap  :w
 inoremap jj <Esc>
 
