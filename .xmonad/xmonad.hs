@@ -50,7 +50,7 @@ import Data.Ratio ((%))
 
 
 main :: IO ()
-main = xmonad $ gnomeConfig
+main = xmonad $ docks $ gnomeConfig
   { logHook    = myLogHookWithPP $ defaultPP {
            ppOrder    = take 1 . drop 2
            , ppTitle    = pangoColor "#003366" . shorten 120
