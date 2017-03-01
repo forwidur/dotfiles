@@ -83,6 +83,9 @@ set undolevels=300
 set ruler
 set noguipty
 
+" Matching for block boundaries.
+runtime macros/matchit.vim
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
