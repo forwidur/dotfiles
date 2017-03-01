@@ -69,6 +69,7 @@ sudo aptitude install -y \
 sudo aptitude install -y \
   ack-grep \
   build-essential \
+  cabal-install \
   clang \
   cmake \
   docker-engine \
