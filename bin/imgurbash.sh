@@ -103,8 +103,8 @@ done
 
 # put the URLs on the clipboard if we have xsel or xclip
 if [ $DISPLAY ]; then
-	{ type xsel >/dev/null 2>/dev/null && echo -n $clip | xsel; } \
-		|| { type xclip >/dev/null 2>/dev/null && echo -n $clip | xclip; } \
+		{ type xclip >/dev/null 2>/dev/null && echo -n $clip | xclip; } \
+	  || { type xsel >/dev/null 2>/dev/null && echo -n $clip | xsel; } \
 		|| echo "Haven't copied to the clipboard: no xsel or xclip" >&2
 else
 	echo "Haven't copied to the clipboard: no \$DISPLAY" >&2
