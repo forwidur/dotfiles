@@ -122,6 +122,7 @@ sudo aptitude install -y \
   kismet-plugins \
   nmap \
   tsocks \
+  whois \
   wireless-tools \
   wireshark-gtk \
 
