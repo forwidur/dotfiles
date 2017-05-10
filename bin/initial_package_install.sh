@@ -76,6 +76,7 @@ sudo aptitude install -y \
   ghc \
   git \
   git-gui \
+  graphviz \
   jq \
   meld \
   openjdk-8-jdk \
