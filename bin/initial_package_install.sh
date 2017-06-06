@@ -40,6 +40,8 @@ sudo aptitude install -y \
   cmatrix \
   ethtool \
   evince \
+  exfat-fuse \
+  exfat-utils \
   fio \
   geeqie \
   glances \
