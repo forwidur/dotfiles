@@ -75,6 +75,7 @@ sudo aptitude install -y \
   clang \
   cmake \
   docker-engine \
+  gdb \
   ghc \
   git \
   git-gui \
