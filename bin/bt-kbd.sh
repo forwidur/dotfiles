@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 export XAUTHORITY=/home/mag/.Xauthority
 export DISPLAY=:0
 
