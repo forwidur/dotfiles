@@ -51,14 +51,15 @@ sudo aptitude install -y \
   htop \
   ioping \
   iotop \
+  lbzip2 \
   maim \
   parallel \
   pavucontrol \
-  bpzip2 \
   pdftk \
   pigz \
   pmount \
   powertop \
+  pxz \
   qbittorrent \
   redshift-gtk \
   speedtest-cli \
