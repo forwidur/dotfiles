@@ -54,7 +54,9 @@ sudo aptitude install -y \
   maim \
   parallel \
   pavucontrol \
+  bpzip2 \
   pdftk \
+  pigz \
   pmount \
   powertop \
   qbittorrent \
