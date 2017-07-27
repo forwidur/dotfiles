@@ -150,9 +150,7 @@ mkdir -p ~/.vim/bak
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Slack client.
-sudo apt-add-repository -y ppa:rael-gc/scudcloud
-sudo aptitude update
-sudo aptitude install -y scudcloud
+curl -s https://packagecloud.io/install/repositories/slacktechnologies/slack/script.deb.sh.deb | sudo bash
 
 # Boot-repair.
 sudo add-apt-repository -y ppa:yannubuntu/boot-repair
