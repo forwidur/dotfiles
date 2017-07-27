@@ -6,7 +6,7 @@ src = ARGV[0]
 STDIN.each do |line|
    from, to = line.scan(/\d+/).map(&:to_i)
    catName = "%s_%d-%d.pdf" % [ File.basename(src, ".pdf"), from, to ]
-   `pdftk #{src} cat #{from}-#{to} output #{catName}`
-   `pdfbooklet #{catName}`
-   `rm #{catName}`
+   `pdftk "#{src}" cat #{from}-#{to} output "#{catName}"`
+   `pdfbooklet "#{catName}"`
+   `rm "#{catName}"`
 end
