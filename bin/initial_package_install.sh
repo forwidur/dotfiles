@@ -34,36 +34,59 @@ sudo aptitude install -y \
   stow \
   vim \
 
-# Utils.
+# System
 sudo aptitude install -y \
-  clipit \
-  cmatrix \
-  ethtool \
-  evince \
   exfat-fuse \
   exfat-utils \
   fio \
-  geeqie \
   glances \
   go-mtpfs \
-  google-talkplugin \
   gparted \
   htop \
   ioping \
   iotop \
+  parallel \
+  pmount \
+
+# Power management
+sudo aptitude install -y \
+  acpi \
+  acpi-support \
+  acpi-call-dkms \
+  powertop \
+  tlp \
+  tlp-rdw \
+  tp-smapi-dkms \
+
+# Network stuff.
+sudo aptitude install -y \
+  arp-scan \
+  ethtool \
+  hping3 \
+  kismet \
+  kismet-plugins \
+  nmap \
+  speedtest-cli \
+  ssmtp \
+  tsocks \
+  whois \
+  wireless-tools \
+  wireshark-gtk \
+
+# Utils.
+sudo aptitude install -y \
+  clipit \
+  cmatrix \
+  evince \
+  geeqie \
   lbzip2 \
   maim \
-  parallel \
   pavucontrol \
   pdftk \
   pigz \
-  pmount \
-  powertop \
   pxz \
   qbittorrent \
   redshift-gtk \
-  speedtest-cli \
-  ssmtp \
   texlive-extra-utils \
   tmux \
   xbacklight \
@@ -115,28 +138,8 @@ sudo aptitude install -y \
 
 # Communication
 sudo aptitude install -y \
+  google-talkplugin \
   telegram-desktop \
-
-# Power management
-sudo aptitude install -y \
-  acpi \
-  acpi-support \
-  acpi-call-dkms \
-  tlp \
-  tlp-rdw \
-  tp-smapi-dkms \
-
-# Network stuff.
-sudo aptitude install -y \
-  arp-scan \
-  hping3 \
-  kismet \
-  kismet-plugins \
-  nmap \
-  tsocks \
-  whois \
-  wireless-tools \
-  wireshark-gtk \
 
 
 # Godeb.
