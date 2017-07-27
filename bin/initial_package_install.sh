@@ -113,6 +113,10 @@ sudo aptitude install -y \
   mplayer \
   mpv \
 
+# Communication
+sudo aptitude install -y \
+  telegram-desktop \
+
 # Power management
 sudo aptitude install -y \
   acpi \
@@ -149,11 +153,6 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 sudo apt-add-repository -y ppa:rael-gc/scudcloud
 sudo aptitude update
 sudo aptitude install -y scudcloud
-
-# Telegram client.
-sudo add-apt-repository -y ppa:atareao/telegram
-sudo aptitude update
-sudo aptitude install -y telegram
 
 # Boot-repair.
 sudo add-apt-repository -y ppa:yannubuntu/boot-repair
