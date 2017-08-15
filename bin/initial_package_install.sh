@@ -162,11 +162,6 @@ vim +PluginInstall +qall
 # Slack client.
 curl -s https://packagecloud.io/install/repositories/slacktechnologies/slack/script.deb.sh.deb | sudo bash
 
-# Boot-repair.
-sudo add-apt-repository -y ppa:yannubuntu/boot-repair
-sudo aptitude update
-sudo aptitude install -y boot-repair
-
 # Tor
 sudo sh -c "echo deb http://deb.torproject.org/torproject.org $RELEASE_NAME main > /etc/apt/sources.list.d/tor.list"
 gpg --keyserver keys.gnupg.net --recv A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89
