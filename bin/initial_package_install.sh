@@ -3,7 +3,8 @@
 RELEASE_NAME=`lsb_release -cs`
 
 # Needed for key verification and initial install.
-sudo apt-get install -y apt-transport-https ca-certificates
+sudo apt-get install -y apt-transport-https ca-certificates \
+                        curl software-properties-common
 
 # Google repos.
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
