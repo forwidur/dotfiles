@@ -157,6 +157,7 @@ sudo bash -c 'wget -O/usr/share/xsessions/xsession.desktop http://uone.lambda.sp
 # Vim stuff.
 mkdir -p ~/.vim/bak
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
 
 # Slack client.
 curl -s https://packagecloud.io/install/repositories/slacktechnologies/slack/script.deb.sh.deb | sudo bash
