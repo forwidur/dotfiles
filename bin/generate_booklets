@@ -1,12 +1,26 @@
 #!/usr/bin/ruby
 
 src = ARGV[0]
+title = ARGV[1]
 
+basename = File.basename(src, ".pdf")
+
+titlefile = ''
+if not title.nil? and not title.empty?
+  titlefile = basename + '-title.pdf'
+  `pdftk "#{src}" cat #{title} output "#{titlefile}"`
+end
 
 STDIN.each do |line|
-   from, to = line.scan(/\d+/).map(&:to_i)
-   catName = "%s_%d-%d.pdf" % [ File.basename(src, ".pdf"), from, to ]
-   `pdftk "#{src}" cat #{from}-#{to} output "#{catName}"`
-   `pdfbooklet "#{catName}"`
-   `rm "#{catName}"`
+  from, to = line.scan(/\d+/).map(&:to_i)
+  catName = "%s_%d-%d.pdf" % [basename , from, to ]
+  `pdftk "#{src}" cat #{from}-#{to} output "#{catName}"`
+  if not titlefile.empty?
+    `pdftk "#{titlefile}" "#{catName}" output "#{catName}_tmp"`
+    `mv "#{catName}_tmp" "#{catName}"`
+  end
+  `pdfbooklet "#{catName}"`
+  `rm "#{catName}"`
 end
+
+`rm "#{titlefile}"`
