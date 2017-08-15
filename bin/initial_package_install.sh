@@ -3,8 +3,9 @@
 RELEASE_NAME=`lsb_release -cs`
 
 # Needed for key verification and initial install.
+sudo apt-get update
 sudo apt-get install -y apt-transport-https ca-certificates \
-                        curl software-properties-common
+                        curl wget software-properties-common aptitude
 
 # Google repos.
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -20,8 +21,7 @@ sudo add-apt-repository \
 # Oracle Java.
 sudo add-apt-repository -y ppa:webupd8team/java
 
-sudo apt-get update
-sudo apt-get install -y aptitude
+sudo aptitude update
 
 # Environment.
 sudo aptitude install -y \
@@ -32,6 +32,9 @@ sudo aptitude install -y \
   lightdm \
   xmonad \
   xorg \
+
+# Install the xsession option.
+sudo bash -c 'wget -O/usr/share/xsessions/xsession.desktop http://uone.lambda.space/~fwd/xsession.desktop'
 
 # Essentials
 sudo aptitude install -y \
@@ -147,20 +150,16 @@ sudo aptitude install -y \
   google-talkplugin \
   telegram-desktop \
 
+# Slack client.
+curl -s https://packagecloud.io/install/repositories/slacktechnologies/slack/script.deb.sh.deb | sudo bash
 
 # Godeb.
 sudo bash -c 'curl https://godeb.s3.amazonaws.com/godeb-amd64.tar.gz | tar xzO > /usr/local/bin/godeb; chmod 755 /usr/local/bin/godeb'
-
-# Install the xsession option.
-sudo bash -c 'wget -O/usr/share/xsessions/xsession.desktop http://uone.lambda.space/~fwd/xsession.desktop'
 
 # Vim stuff.
 mkdir -p ~/.vim/bak
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
-
-# Slack client.
-curl -s https://packagecloud.io/install/repositories/slacktechnologies/slack/script.deb.sh.deb | sudo bash
 
 # Tor
 sudo sh -c "echo deb http://deb.torproject.org/torproject.org $RELEASE_NAME main > /etc/apt/sources.list.d/tor.list"
