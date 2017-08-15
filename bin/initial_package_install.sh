@@ -26,6 +26,7 @@ sudo apt-get install -y aptitude
 # Environment.
 sudo aptitude install -y \
   alsa-utils \
+  breeze-cursor-theme \
   gnome-panel \
   gnome-session-flashback \
   lightdm \
