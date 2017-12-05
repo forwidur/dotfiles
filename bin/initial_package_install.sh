@@ -129,8 +129,7 @@ sudo aptitude install -y \
 
 # Datascience stuff.
 sudo aptitude install -y \
-  ipython \
-  ipython-notebook \
+  jupyter-notebook \
   octave \
   python-matplotlib \
   python-numpy \
