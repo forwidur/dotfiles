@@ -88,6 +88,7 @@ sudo aptitude install -y \
   cmatrix \
   evince \
   geeqie \
+  gtk-recordmydesktop \
   lbzip2 \
   maim \
   pavucontrol \
