@@ -127,7 +127,6 @@ sudo aptitude install -y \
   source-highlight \
   upx \
   vim-gtk \
-  vim-youcompleteme \
   zeal \
 
 # Datascience stuff.
