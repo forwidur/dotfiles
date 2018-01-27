@@ -34,7 +34,7 @@ sudo aptitude install -y \
   xorg \
 
 # Install the xsession option.
-sudo bash -c 'wget -O/usr/share/xsessions/xsession.desktop http://uone.lambda.space/~fwd/xsession.desktop'
+sudo bash -c 'wget -O/usr/share/xsessions/xsession.desktop http://mag.lambda.space/xsession.desktop'
 
 # Essentials
 sudo aptitude install -y \
