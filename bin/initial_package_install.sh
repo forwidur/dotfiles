@@ -178,7 +178,7 @@ wget -c http://kindlegen.s3.amazonaws.com/kindlegen_linux_2.6_i386_v2_9.tar.gz -
 
 # gcloud
 export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
-echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee /etc/apt/sources.list.d/google-cloud-sdk.list
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 sudo aptitude update
 sudo aptitude install -y google-cloud-sdk kubectl
@@ -188,5 +188,6 @@ curl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-
 
 # Signal
 curl -s https://updates.signal.org/desktop/apt/keys.asc | sudo apt-key add -
-echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
-sudo apt update && sudo apt install signal-desktop
+echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sudo tee /etc/apt/sources.list.d/signal-xenial.list
+sudo apt update
+sudo apt install signal-desktop
