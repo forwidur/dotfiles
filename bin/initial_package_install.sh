@@ -104,8 +104,10 @@ sudo aptitude install -y \
   youtube-dl \
 
 # Dev stuff.
+# FIXME: ack-grep for 17.10, the package ins not in the repo.
+# temporary fix:
+# curl https://beyondgrep.com/ack-2.18-single-file > /usr/local/bin/ack && chmod 0755 /usr/local/bin/ack
 sudo aptitude install -y \
-  ack-grep \
   build-essential \
   cabal-install \
   ccache \
