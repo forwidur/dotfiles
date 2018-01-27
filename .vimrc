@@ -114,6 +114,9 @@ Bundle 'Valloric/YouCompleteMe'
 nnoremap <leader>gd :YcmCompleter GoTo<CR>
 nnoremap <leader>gs :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gi :YcmCompleter GoToInclude<CR>
+nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
+nnoremap <leader>gt :YcmCompleter GetDoc<CR>
+let g:ycm_python_binary_path = '/usr/bin/python3.6'
 
 Bundle 'lukerandall/haskellmode-vim'
 au BufEnter *.hs compiler ghc
