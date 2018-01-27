@@ -154,7 +154,7 @@ sudo aptitude install -y \
   telegram-desktop \
 
 # Slack client.
-curl -s https://packagecloud.io/install/repositories/slacktechnologies/slack/script.deb.sh.deb | sudo bash
+sudo snap install slack --classic
 
 # Godeb.
 sudo bash -c 'curl https://godeb.s3.amazonaws.com/godeb-amd64.tar.gz | tar xzO > /usr/local/bin/godeb; chmod 755 /usr/local/bin/godeb'
