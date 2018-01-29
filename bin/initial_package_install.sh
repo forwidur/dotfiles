@@ -184,6 +184,7 @@ sudo aptitude update
 sudo aptitude install -y google-cloud-sdk kubectl
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
 curl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-kvm2 && chmod +x docker-machine-driver-kvm2 && sudo mv docker-machine-driver-kvm2 /usr/local/bin/
+curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | sudo bash
 
 
 # Signal
