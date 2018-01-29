@@ -37,6 +37,10 @@ sudo aptitude install -y \
 # Install the xsession option.
 sudo bash -c 'wget -O/usr/share/xsessions/xsession.desktop http://mag.lambda.space/xsession.desktop'
 
+# Hook up the local .bashrc.
+echo 'source /home/${USER}/.bashrc.fwd' >> /home/${USER}/.bashrc
+
+
 # Essentials
 sudo aptitude install -y \
   google-chrome-beta \
