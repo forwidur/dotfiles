@@ -73,7 +73,7 @@ autocmd FileType go set noet
 
 " Persistent undo.
 if has("persistent_undo")
-    set undodir=~/.undodir/
+    set undodir=~/.vim/undo/
     set undofile
 endif
 
