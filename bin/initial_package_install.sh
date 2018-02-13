@@ -67,6 +67,7 @@ sudo aptitude install -y \
   acpi \
   acpi-support \
   acpi-call-dkms \
+  i7z \
   powertop \
   tlp \
   tlp-rdw \
