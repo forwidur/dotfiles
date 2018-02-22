@@ -99,8 +99,8 @@ Bundle 'steffanc/cscopemaps.vim'
 Bundle 'scrooloose/syntastic'
 let g:syntastic_always_populate_loc_list = 1
 map <F3> :SyntasticCheck
-map <C-k> :lnext
-map <C-l> :lprev
+map <C-j> :lnext
+map <C-k> :lprev
 let g:syntastic_go_checkers = ['go']
 let g:systastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_exec = 'python3'
@@ -119,6 +119,7 @@ nnoremap <leader>gs :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gi :YcmCompleter GoToInclude<CR>
 nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <leader>gt :YcmCompleter GetDoc<CR>
+let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 let g:ycm_python_binary_path = '/usr/bin/python3.6'
 
 Bundle 'lukerandall/haskellmode-vim'
