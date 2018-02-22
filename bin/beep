@@ -4,4 +4,4 @@ file="/usr/share/sounds/freedesktop/stereo/complete.oga"
 #file="/usr/share/sounds/freedesktop/stereo/complete.oga"
 #file="/usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga."
 
-/usr/bin/mplayer -really-quiet -af volume=15:1 "${file}" 2>/dev/null
+/usr/bin/mpv -really-quiet "${file}" 2>/dev/null
