@@ -93,6 +93,7 @@ Plugin 'fatih/vim-go'
 let g:go_fmt_command = "goimports"
 let g:go_fmt_fail_silently = 1
 let g:go_bin_path = expand("~/.go/bin")
+autocmd FileType go noremap <leader>b :GoBuild<CR>
 
 Bundle 'steffanc/cscopemaps.vim'
 
