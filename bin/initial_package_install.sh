@@ -97,6 +97,7 @@ sudo aptitude install -y \
   gtk-recordmydesktop \
   lbzip2 \
   maim \
+  rename \
   pavucontrol \
   pdftk \
   pigz \
