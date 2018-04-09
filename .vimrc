@@ -122,6 +122,8 @@ nnoremap <leader>gi :YcmCompleter GoToInclude<CR>
 nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <leader>gt :YcmCompleter GetDoc<CR>
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+let g:ycm_error_symbol='✗'
+let g:ycm_warning_symbol='▲'
 let g:ycm_python_binary_path = '/usr/bin/python3.6'
 
 Bundle 'lukerandall/haskellmode-vim'
