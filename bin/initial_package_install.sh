@@ -131,6 +131,7 @@ sudo aptitude install -y \
   openjdk-8-jdk \
   python-pip \
   ruby \
+  shellcheck \
   source-highlight \
   upx \
   vim-gtk \
