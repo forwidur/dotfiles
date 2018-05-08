@@ -102,7 +102,7 @@ let g:syntastic_always_populate_loc_list = 1
 map <F3> :SyntasticCheck
 map <C-j> :lnext
 map <C-k> :lprev
-let g:syntastic_go_checkers = ['go']
+let g:syntastic_go_checkers = ['go', 'golint', 'govet', 'errcheck']
 let g:systastic_python_checkers = ['flake8']
 let g:syntastic_python_pylint_exec = ''
 let g:syntastic_python_flake8_exec = 'python3'
