@@ -4,7 +4,6 @@ filetype on
 filetype plugin on
 autocmd FileType *      set formatoptions=tcql nocindent comments&
 autocmd FileType c,cpp  set formatoptions=croql cindent comments=sr:/*,mb:*,ex:*/,://
-autocmd BufRead,BufNewFile *.go set filetype=go
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -69,7 +68,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " Go formatting
 autocmd BufWritePre *.go GoFmt
-autocmd FileType go set noet
 
 " Persistent undo.
 if has("persistent_undo")
