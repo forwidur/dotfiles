@@ -20,7 +20,7 @@ ARGV.each { |file|
   Mail.deliver do
     delivery_method :smtp, options
     from     "Book Elf <%s>" % $address
-    to       "forwidur7@free.kindle.com"
+    to       "forwidur@free.kindle.com"
     subject  'Book'
     body     ''
     add_file file
