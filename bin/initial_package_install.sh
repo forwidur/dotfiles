@@ -78,6 +78,7 @@ sudo aptitude install -y \
   arp-scan \
   ethtool \
   hping3 \
+  iperf3 \
   kismet \
   kismet-plugins \
   nmap \
