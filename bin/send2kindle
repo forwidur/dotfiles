@@ -16,7 +16,19 @@ options = { :address              => "smtp.gmail.com",
             :enable_starttls_auto => true  }
 
 ARGV.each { |file|
-  print "Sending '%s'\n" % file
+
+  if file.end_with? ".epub"
+    print "Converting #{file} to MOBI. "
+    out = `kindlegen -dont_append_source "#{file}"`
+    if not $?.success?
+      print out
+      exit 1
+    end
+    print "Done.\n"
+    file = file.sub ".epub", ".mobi"
+  end
+
+  print "Sending '%s' " % file
   Mail.deliver do
     delivery_method :smtp, options
     from     "Book Elf <%s>" % $address
@@ -26,6 +38,5 @@ ARGV.each { |file|
     add_file file
   end
 
-  print "'%s' sent!\n" % file
+  print "Done.\n"
 }
-
