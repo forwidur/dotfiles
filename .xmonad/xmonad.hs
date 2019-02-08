@@ -22,6 +22,7 @@ import XMonad.Layout.Reflect
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.FixedColumn
 import XMonad.Layout.Tabbed
+import XMonad.Layout.ThreeColumns
 import XMonad.Util.EZConfig
 
 import qualified Data.Map as M
@@ -110,6 +111,8 @@ myLayout
     = tiled
     ||| myResizable
 ---    ||| FixedColumn 1 20 84 10
+    ||| ThreeColMid 1 (3/100) (1/3)
+    ||| ThreeCol 1 (3/100) (2/5)
     ||| Full
     ||| simpleTabbed
     ||| (reflectHoriz $ withIM (1%12) (Title "Buddy List") (reflectHoriz $ myResizable))

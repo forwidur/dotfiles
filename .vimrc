@@ -124,6 +124,8 @@ let g:ycm_error_symbol='✗'
 let g:ycm_warning_symbol='▲'
 let g:ycm_python_binary_path = '/usr/bin/python3.6'
 
+Plugin 'davidhalter/jedi-vim'
+
 Bundle 'lukerandall/haskellmode-vim'
 au BufEnter *.hs compiler ghc
 let g:haddock_browser="/usr/bin/google-chrome"
