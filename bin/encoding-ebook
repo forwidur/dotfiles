@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set +x
+
+name=`realpath "$@"`
+fixed_name="${name%.epub}_fixed.epub"
+dir=`mktemp -d`
+
+unzip "$name" -d $dir/
+sed -i '1s!^!<?xml version='1.0' encoding='utf-8'?>!' $dir/OEBPS/*htm*
+
+(cd $dir && zip -9 -r "$fixed_name" *)
+rm -rf $dir
