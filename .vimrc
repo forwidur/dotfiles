@@ -93,9 +93,9 @@ let g:go_fmt_fail_silently = 1
 let g:go_bin_path = expand("~/.go/bin")
 autocmd FileType go noremap <leader>b :GoBuild<CR>
 
-Bundle 'steffanc/cscopemaps.vim'
+Plugin 'steffanc/cscopemaps.vim'
 
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 let g:syntastic_always_populate_loc_list = 1
 map <F3> :SyntasticCheck
 map <C-j> :lnext
@@ -106,14 +106,14 @@ let g:syntastic_python_pylint_exec = ''
 "let g:syntastic_python_flake8_exec = 'python3'
 "let g:syntastic_python_flake8_args = ['-m', 'flake8']
 
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_max_files=500000
 let g:ctrlp_max_depth=40
 let g:ctrlp_custom_ignore='.git$|\tmp$'
 "let g:ctrlp_cmd = "CtrlPBuffer"
 
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 nnoremap <leader>gd :YcmCompleter GoTo<CR>
 nnoremap <leader>gs :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gi :YcmCompleter GoToInclude<CR>
@@ -127,24 +127,24 @@ let g:ycm_python_binary_path = ''
 
 Plugin 'davidhalter/jedi-vim'
 
-Bundle 'lukerandall/haskellmode-vim'
+Plugin 'lukerandall/haskellmode-vim'
 au BufEnter *.hs compiler ghc
 let g:haddock_browser="/usr/bin/google-chrome"
 
-Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-obsession'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-obsession'
 
-Bundle 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 
-Bundle 'mileszs/ack.vim'
+Plugin 'mileszs/ack.vim'
 
-Bundle 'ivalkeen/vim-ctrlp-tjump'
+Plugin 'ivalkeen/vim-ctrlp-tjump'
 nnoremap <c-]> :CtrlPtjump<cr>
 vnoremap <c-]> :CtrlPtjumpVisual<cr>
 
-Bundle 'mbbill/undotree'
+Plugin 'mbbill/undotree'
 
-Bundle 'rhysd/vim-clang-format'
+Plugin 'rhysd/vim-clang-format'
 let g:clang_format#style_options = {
             \ "AllowShortIfStatementsOnASingleLine" : "true",
             \ "Standard" : "C++11"
@@ -164,7 +164,13 @@ let g:airline_theme='sol'
 
 Plugin 'justinmk/vim-syntax-extra'
 
-Bundle 'mrtazz/simplenote.vim'
+Plugin 'mrtazz/simplenote.vim'
 source ~/.simplenoterc
+
+Plugin 'RRethy/vim-illuminate'
+
+Plugin 'inside/vim-search-pulse'
+
+Plugin 'pandysong/ghost-text.vim'
 
 call vundle#end()
