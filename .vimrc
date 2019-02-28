@@ -108,7 +108,7 @@ let g:syntastic_python_flake8_args = ['-m', 'flake8']
 
 Bundle 'kien/ctrlp.vim'
 let g:ctrlp_working_path_mode = 0
-let g:ctrlp_max_files=50000
+let g:ctrlp_max_files=500000
 let g:ctrlp_max_depth=40
 let g:ctrlp_custom_ignore='.git$|\tmp$'
 "let g:ctrlp_cmd = "CtrlPBuffer"
