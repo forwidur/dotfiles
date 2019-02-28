@@ -101,10 +101,10 @@ map <F3> :SyntasticCheck
 map <C-j> :lnext
 map <C-k> :lprev
 let g:syntastic_go_checkers = ['go', 'golint', 'govet', 'errcheck']
-let g:systastic_python_checkers = ['flake8']
+let g:systastic_python_checkers = ['python']
 let g:syntastic_python_pylint_exec = ''
-let g:syntastic_python_flake8_exec = 'python3'
-let g:syntastic_python_flake8_args = ['-m', 'flake8']
+"let g:syntastic_python_flake8_exec = 'python3'
+"let g:syntastic_python_flake8_args = ['-m', 'flake8']
 
 Bundle 'kien/ctrlp.vim'
 let g:ctrlp_working_path_mode = 0
