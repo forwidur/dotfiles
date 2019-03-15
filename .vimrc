@@ -171,6 +171,4 @@ Plugin 'RRethy/vim-illuminate'
 
 Plugin 'inside/vim-search-pulse'
 
-Plugin 'pandysong/ghost-text.vim'
-
 call vundle#end()
