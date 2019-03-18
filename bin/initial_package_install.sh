@@ -160,8 +160,9 @@ sudo aptitude install -y \
   google-talkplugin \
   telegram-desktop \
 
-# Slack client.
+# Snaps
 sudo snap install slack --classic
+sudo snap install simplenote
 
 # Godeb.
 sudo bash -c 'curl https://godeb.s3.amazonaws.com/godeb-amd64.tar.gz | tar xzO > /usr/local/bin/godeb; chmod 755 /usr/local/bin/godeb'
