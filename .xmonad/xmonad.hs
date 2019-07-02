@@ -23,6 +23,7 @@ import XMonad.Layout.ResizableTile
 import XMonad.Layout.FixedColumn
 import XMonad.Layout.Tabbed
 import XMonad.Layout.ThreeColumns
+import XMonad.Layout.MultiColumns
 import XMonad.Util.EZConfig
 
 import qualified Data.Map as M
@@ -113,6 +114,7 @@ myLayout
 ---    ||| FixedColumn 1 20 84 10
     ||| ThreeColMid 1 (3/100) (1/3)
     ||| ThreeCol 1 (3/100) (2/5)
+    ||| multiCol [1] 1 0.01 0.2
     ||| Full
     ||| simpleTabbed
     ||| (reflectHoriz $ withIM (1%12) (Title "Buddy List") (reflectHoriz $ myResizable))
@@ -132,6 +134,8 @@ newKeys x = M.union (delKeys x) (M.fromList (myKeys x))
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) =
         [ ((modm, xK_b     ), sendMessage ToggleStruts)
+        , ((modm, xK_i     ), sendMessage (IncMasterN 1))
+        , ((modm, xK_d     ), sendMessage (IncMasterN (-1)))
         , ((modm, xK_p     ), shellPrompt myXPConfig)
         , ((modm, xK_grave), windowPromptGoto myXPConfig)
         , ((modm, xK_s), S.promptSearch myXPConfig S.google)
