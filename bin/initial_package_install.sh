@@ -61,6 +61,7 @@ sudo aptitude install -y \
   iotop \
   parallel \
   pmount \
+  rlwrap \
 
 # Power management
 sudo aptitude install -y \
