@@ -57,6 +57,7 @@ sudo aptitude install -y \
   go-mtpfs \
   gparted \
   htop \
+  inotify-tools \
   ioping \
   iotop \
   parallel \
