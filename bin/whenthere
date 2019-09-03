@@ -1,0 +1,10 @@
+#!/bin/bash
+
+WATCHED_FILENAME=${@: -1}
+
+while inotifywait -qq `pwd` -e create -e moved_to ; do
+  if [ -f "${WATCHED_FILENAME}" ]; then
+    $@
+    exit
+  fi
+done
