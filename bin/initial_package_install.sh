@@ -101,6 +101,7 @@ sudo aptitude install -y \
   lbzip2 \
   maim \
   rename \
+  renameutils \
   pavucontrol \
   pdftk \
   pigz \
