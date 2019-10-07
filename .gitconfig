@@ -1,3 +1,13 @@
+# This is Git's per-user configuration file.
 [user]
-	email = forwidur@gmail.com
+# Please adapt and uncomment the following lines:
+#	name = mag
+#	email = mag@x1
+[user]
 	name = Max Grigorev
+	email = forwidur@gmail.com
+[gui]
+	fontui = -family \"DejaVu Sans\" -size 8 -weight normal -slant roman -underline 0 -overstrike 0
+	fontdiff = -family \"DejaVu Sans Mono\" -size 9 -weight normal -slant roman -underline 0 -overstrike 0
+[push]
+	default = current
