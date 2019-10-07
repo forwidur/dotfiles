@@ -95,6 +95,7 @@ sudo aptitude install -y \
 sudo aptitude install -y \
   clipit \
   cmatrix \
+  dunst \
   evince \
   geeqie \
   gtk-recordmydesktop \
