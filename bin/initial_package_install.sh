@@ -157,7 +157,6 @@ sudo aptitude install -y \
 sudo aptitude install -y \
   clementine \
   lame \
-  mplayer \
   mpv \
 
 # Communication
