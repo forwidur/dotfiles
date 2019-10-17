@@ -104,7 +104,6 @@ sudo aptitude install -y \
   rename \
   renameutils \
   pavucontrol \
-  pdftk \
   pigz \
   pxz \
   qbittorrent \
@@ -170,6 +169,7 @@ sudo aptitude install -y \
 # Snaps
 sudo snap install slack --classic
 sudo snap install simplenote
+sudo snap install pdftk
 
 # Godeb.
 sudo bash -c 'curl https://godeb.s3.amazonaws.com/godeb-amd64.tar.gz | tar xzO > /usr/local/bin/godeb; chmod 755 /usr/local/bin/godeb'
@@ -200,7 +200,6 @@ sudo aptitude install -y google-cloud-sdk kubectl
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
 curl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-kvm2 && chmod +x docker-machine-driver-kvm2 && sudo mv docker-machine-driver-kvm2 /usr/local/bin/
 curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | sudo bash
-
 
 # Signal
 curl -s https://updates.signal.org/desktop/apt/keys.asc | sudo apt-key add -
