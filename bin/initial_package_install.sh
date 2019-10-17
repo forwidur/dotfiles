@@ -210,3 +210,4 @@ sudo apt install signal-desktop
 
 # Pip-based utils.
 pip3 install undervolt
+pip3 install jupyterthemes
