@@ -170,6 +170,7 @@ sudo aptitude install -y \
 sudo snap install slack --classic
 sudo snap install simplenote
 sudo snap install pdftk
+sudo snap install code --classic
 
 # Godeb.
 sudo bash -c 'curl https://godeb.s3.amazonaws.com/godeb-amd64.tar.gz | tar xzO > /usr/local/bin/godeb; chmod 755 /usr/local/bin/godeb'
