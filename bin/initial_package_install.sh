@@ -133,6 +133,8 @@ sudo aptitude install -y \
   meld \
   openjdk-8-jdk \
   python-pip \
+  python3 \
+  python3-pip \
   ruby \
   shellcheck \
   source-highlight \
@@ -146,11 +148,11 @@ sudo aptitude install -y \
   jupyter-notebook \
   ipython3 \
   octave \
-  python-matplotlib \
-  python-numpy \
-  python-pandas \
-  python-scipy \
-  python-sympy \
+  python3-matplotlib \
+  python3-numpy \
+  python3-pandas \
+  python3-scipy \
+  python3-sympy \
 
 # Media.
 sudo aptitude install -y \
