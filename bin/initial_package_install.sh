@@ -93,7 +93,6 @@ sudo aptitude install -y \
 
 # Utils.
 sudo aptitude install -y \
-  clipit \
   cmatrix \
   dunst \
   evince \
@@ -107,6 +106,7 @@ sudo aptitude install -y \
   pigz \
   pxz \
   qbittorrent \
+  parcellite \
   redshift-gtk \
   texlive-extra-utils \
   tmux \
