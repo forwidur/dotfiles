@@ -28,9 +28,9 @@ sudo aptitude update
 sudo aptitude install -y \
   alsa-utils \
   breeze-cursor-theme \
+  gdm3 \
   gnome-panel \
   gnome-session-flashback \
-  lightdm \
   xmonad \
   xorg \
 
