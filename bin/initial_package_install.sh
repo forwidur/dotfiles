@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 RELEASE_NAME=`lsb_release -cs`
 
 # Needed for key verification and initial install.
