@@ -104,7 +104,7 @@ sudo aptitude install -y \
   renameutils \
   pavucontrol \
   pigz \
-  pxz \
+  pixz \
   qbittorrent \
   parcellite \
   redshift-gtk \
