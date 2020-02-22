@@ -167,6 +167,10 @@ sudo aptitude install -y \
   google-talkplugin \
   telegram-desktop \
 
+# Veracrypt
+sudo add-apt-repository ppa:unit193/encryption
+sudo aptitude install veracrypt
+
 # Snaps
 sudo snap install slack --classic
 sudo snap install simplenote
