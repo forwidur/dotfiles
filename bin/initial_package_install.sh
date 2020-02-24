@@ -160,6 +160,7 @@ sudo aptitude install -y \
 # Media.
 sudo aptitude install -y \
   clementine \
+  flac \
   lame \
   mpv \
 
