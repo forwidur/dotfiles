@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 RELEASE_NAME=`lsb_release -cs`
 
 # Needed for key verification and initial install.
@@ -11,7 +13,9 @@ sudo apt-get install -y apt-transport-https ca-certificates \
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list'
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/talkplugin/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-sudo rm /etc/apt/sources.list.d/google-chrome-beta.list
+if [ -e /etc/apt/sources.list.d/google-chrome-beta.list ]; then
+  sudo rm /etc/apt/sources.list.d/google-chrome-beta.list
+fi
 
 # Docker repo.
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -28,9 +32,9 @@ sudo aptitude update
 sudo aptitude install -y \
   alsa-utils \
   breeze-cursor-theme \
+  gdm3 \
   gnome-panel \
   gnome-session-flashback \
-  lightdm \
   xmonad \
   xorg \
 
@@ -93,19 +97,20 @@ sudo aptitude install -y \
 
 # Utils.
 sudo aptitude install -y \
-  clipit \
   cmatrix \
+  dunst \
   evince \
   geeqie \
   gtk-recordmydesktop \
   lbzip2 \
   maim \
   rename \
+  renameutils \
   pavucontrol \
-  pdftk \
   pigz \
-  pxz \
+  pixz \
   qbittorrent \
+  parcellite \
   redshift-gtk \
   texlive-extra-utils \
   tmux \
@@ -131,6 +136,8 @@ sudo aptitude install -y \
   meld \
   openjdk-8-jdk \
   python-pip \
+  python3 \
+  python3-pip \
   ruby \
   shellcheck \
   source-highlight \
@@ -144,17 +151,17 @@ sudo aptitude install -y \
   jupyter-notebook \
   ipython3 \
   octave \
-  python-matplotlib \
-  python-numpy \
-  python-pandas \
-  python-scipy \
-  python-sympy \
+  python3-matplotlib \
+  python3-numpy \
+  python3-pandas \
+  python3-scipy \
+  python3-sympy \
 
 # Media.
 sudo aptitude install -y \
   clementine \
+  flac \
   lame \
-  mplayer \
   mpv \
 
 # Communication
@@ -163,9 +170,15 @@ sudo aptitude install -y \
   google-talkplugin \
   telegram-desktop \
 
+# Veracrypt
+sudo add-apt-repository ppa:unit193/encryption
+sudo aptitude install veracrypt
+
 # Snaps
 sudo snap install slack --classic
 sudo snap install simplenote
+sudo snap install pdftk
+sudo snap install code --classic
 
 # Godeb.
 sudo bash -c 'curl https://godeb.s3.amazonaws.com/godeb-amd64.tar.gz | tar xzO > /usr/local/bin/godeb; chmod 755 /usr/local/bin/godeb'
@@ -197,9 +210,12 @@ curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/miniku
 curl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-kvm2 && chmod +x docker-machine-driver-kvm2 && sudo mv docker-machine-driver-kvm2 /usr/local/bin/
 curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | sudo bash
 
-
 # Signal
 curl -s https://updates.signal.org/desktop/apt/keys.asc | sudo apt-key add -
 echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sudo tee /etc/apt/sources.list.d/signal-xenial.list
 sudo apt update
 sudo apt install signal-desktop
+
+# Pip-based utils.
+pip3 install undervolt
+pip3 install jupyterthemes

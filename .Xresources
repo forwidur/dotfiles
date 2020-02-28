@@ -14,3 +14,5 @@ urxvt.visualBell: 1
 urxvt.font: -misc-fixed-medium-r-normal--13-*-*-*-c-*-iso10646-1
 urxvt.modifier: mod1
 urxvt.print-pipe: "cat > /dev/null"
+Xcursor.theme: breeeze_cursors
+Xcursor.size: 16
