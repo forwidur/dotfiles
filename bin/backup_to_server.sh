@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 set -x
 
@@ -9,7 +9,7 @@ rsync --progress --copy-dirlinks -v -ar -z -e ssh papers work $DST
 
 if [ -d "/media/stuff" ]; then
   rsync --progress --copy-dirlinks -v -a -e ssh --delete \
-      /media/stuff/{books,audiobooks,music,music-highres} $DST
+      /media/stuff/{books,audiobooks,music,music-highres,music-multi} $DST
 fi
 
 #rsync --progress --copy-dirlinks -v -ar -e ssh /media/home/{photos,backup,books} fwd@uone.cu.cc:backups/home/store
