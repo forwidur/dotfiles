@@ -104,6 +104,7 @@ sudo aptitude install -y \
   gtk-recordmydesktop \
   lbzip2 \
   maim \
+  moreutils \
   rename \
   renameutils \
   pavucontrol \
