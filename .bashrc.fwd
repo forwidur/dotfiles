@@ -64,7 +64,7 @@ mp3recode() {
   for i do
     echo "$i"
     tmpf=`mktemp`
-    lame --quiet --preset $preset "$i" $tmpf && mv $tmpf "$i"
+    lame --quiet --preset $preset "$i" $tmpf && mv $tmpf "${i/.wav/.mp3/}"
   done
 }
 
@@ -74,8 +74,10 @@ mp3parallelrecode() {
   echo -e "Parallel recode using preset \033[1;93m$preset\033[0m"
   parallel -u "echo {};  \
       tmpf=\`mktemp\`; \
+      dst={} && dst=\${dst/.wav/.mp3}; \
+      echo \$dst; \
       lame --quiet --preset $preset {} \$tmpf && \
-      mv \$tmpf {}" ::: "${files[@]}"
+      mv \$tmpf \"\$dst\"" ::: "${files[@]}"
 }
 
 alias node='env NODE_NO_READLINE=1 rlwrap node'
