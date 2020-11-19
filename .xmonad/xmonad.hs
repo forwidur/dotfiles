@@ -147,7 +147,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
         , ((modm,               xK_a),            sendMessage MirrorShrink)
         , ((modm,               xK_z),            sendMessage MirrorExpand)
         , ((controlMask .|. mod1Mask, xK_l),      spawn "gnome-screensaver-command -l")
-        , ((controlMask .|. mod1Mask, xK_s),      spawn "sshot")
+        , ((controlMask .|. mod1Mask, xK_s),      spawn "flameshot gui")
         , ((controlMask .|. mod1Mask, xK_r),      spawn "killall -USR1 redshift")
         , ((controlMask .|. mod1Mask, xK_n),      spawn "notify-send DUNST_COMMAND_PAUSE")
         , ((controlMask .|. mod1Mask, xK_b),      spawn "notify-send DUNST_COMMAND_RESUME")
