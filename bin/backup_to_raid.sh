@@ -4,4 +4,4 @@ LOC=/media/store/
 
 cd
 rsync -a work papers bin ${LOC}/backup/home/
-rsync -a /media/stuff/* ${LOC}/
+rsync -a --exclude "movies" --exclude "music-insoft" /media/stuff/* ${LOC}/
