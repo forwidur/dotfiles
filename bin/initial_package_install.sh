@@ -85,8 +85,6 @@ sudo aptitude install -y \
   ethtool \
   hping3 \
   iperf3 \
-  kismet \
-  kismet-plugins \
   nmap \
   speedtest-cli \
   ssmtp \
