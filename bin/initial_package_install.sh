@@ -101,7 +101,6 @@ sudo aptitude install -y \
   dunst \
   evince \
   geeqie \
-  gtk-recordmydesktop \
   lbzip2 \
   maim \
   moreutils \
