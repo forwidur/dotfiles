@@ -175,8 +175,8 @@ sudo aptitude install -y \
   telegram-desktop \
 
 # Veracrypt
-sudo add-apt-repository ppa:unit193/encryption
-sudo aptitude install veracrypt
+sudo add-apt-repository -y ppa:unit193/encryption
+sudo aptitude install -y veracrypt
 
 # Snaps
 sudo snap install slack --classic
