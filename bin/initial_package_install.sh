@@ -170,7 +170,6 @@ sudo aptitude install -y \
 # Communication
 sudo aptitude install -y \
   fonts-emojione \
-  google-talkplugin \
   telegram-desktop \
 
 # Veracrypt
