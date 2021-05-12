@@ -13,18 +13,18 @@ sudo apt-get install -y apt-transport-https ca-certificates \
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list'
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/talkplugin/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-if [ -e /etc/apt/sources.list.d/google-chrome-beta.list ]; then
-  sudo rm /etc/apt/sources.list.d/google-chrome-beta.list
+if [ -e /etc/apt/sources.list.d/google.list ]; then
+  sudo rm /etc/apt/sources.list.d/google.list
 fi
 
 # Docker repo.
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository \
+sudo add-apt-repository -y \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $RELEASE_NAME stable"
 
 # Oracle Java.
-sudo add-apt-repository -y ppa:webupd8team/java
+#sudo add-apt-repository -y ppa:webupd8team/java
 
 sudo aptitude update
 
