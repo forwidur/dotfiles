@@ -91,6 +91,8 @@ sudo aptitude install -y \
   tsocks \
   whois \
   wireless-tools \
+  wireguard \
+  wireguard-tools \
   wireshark-gtk \
 
 # Utils.
