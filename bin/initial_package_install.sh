@@ -135,7 +135,6 @@ sudo aptitude install -y \
   jq \
   meld \
   openjdk-8-jdk \
-  python-pip \
   python3 \
   python3-pip \
   ruby \
