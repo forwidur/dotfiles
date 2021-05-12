@@ -147,15 +147,19 @@ sudo aptitude install -y \
   zeal \
 
 # Datascience stuff.
+sudo pip3 install \
+  jupyter \
+  jupyterthemes \
+  matplotlib \
+  numpy \
+  pandas \
+  scipy \
+  seaborn \
+  sympy \
+  torch \
+
 sudo aptitude install -y \
-  jupyter-notebook \
-  ipython3 \
   octave \
-  python3-matplotlib \
-  python3-numpy \
-  python3-pandas \
-  python3-scipy \
-  python3-sympy \
 
 # Media.
 sudo aptitude install -y \
@@ -218,4 +222,3 @@ sudo apt install signal-desktop
 
 # Pip-based utils.
 pip3 install undervolt
-pip3 install jupyterthemes
