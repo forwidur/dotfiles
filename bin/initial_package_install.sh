@@ -51,6 +51,7 @@ sudo aptitude install -y \
   rxvt-unicode \
   stow \
   vim \
+  python3 \
 
 # System
 sudo aptitude install -y \
@@ -67,6 +68,8 @@ sudo aptitude install -y \
   parallel \
   pmount \
   rlwrap \
+
+sudo pip3 install pyudev
 
 # Power management
 sudo aptitude install -y \
@@ -218,5 +221,5 @@ sudo apt update
 sudo apt install signal-desktop
 
 # Pip-based utils.
-pip3 install undervolt
-pip3 install jupyterthemes
+sudo pip3 install undervolt
+sudo pip3 install jupyterthemes
