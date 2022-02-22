@@ -171,4 +171,17 @@ Plugin 'RRethy/vim-illuminate'
 
 Plugin 'inside/vim-search-pulse'
 
+Plugin 'klen/python-mode'
+let g:pymode_indent = 0
+let g:pymode_lint_options_pep8 =
+        \ {'ignore': 'E111'}
+au BufNewFile,BufRead *.py
+    \ set tabstop=2
+    \ softtabstop=2
+    \ shiftwidth=2
+    \ textwidth=80
+    \ expandtab
+    \ autoindent
+    \ fileformat=unix
+
 call vundle#end()
