@@ -13,18 +13,18 @@ sudo apt-get install -y apt-transport-https ca-certificates \
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list'
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/talkplugin/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-if [ -e /etc/apt/sources.list.d/google-chrome-beta.list ]; then
-  sudo rm /etc/apt/sources.list.d/google-chrome-beta.list
+if [ -e /etc/apt/sources.list.d/google.list ]; then
+  sudo rm /etc/apt/sources.list.d/google.list
 fi
 
 # Docker repo.
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository \
+sudo add-apt-repository -y \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $RELEASE_NAME stable"
 
 # Oracle Java.
-sudo add-apt-repository -y ppa:webupd8team/java
+#sudo add-apt-repository -y ppa:webupd8team/java
 
 sudo aptitude update
 
@@ -88,14 +88,14 @@ sudo aptitude install -y \
   ethtool \
   hping3 \
   iperf3 \
-  kismet \
-  kismet-plugins \
   nmap \
   speedtest-cli \
   ssmtp \
   tsocks \
   whois \
   wireless-tools \
+  wireguard \
+  wireguard-tools \
   wireshark-gtk \
 
 # Utils.
@@ -104,7 +104,6 @@ sudo aptitude install -y \
   dunst \
   evince \
   geeqie \
-  gtk-recordmydesktop \
   lbzip2 \
   maim \
   moreutils \
@@ -139,7 +138,6 @@ sudo aptitude install -y \
   jq \
   meld \
   openjdk-8-jdk \
-  python-pip \
   python3 \
   python3-pip \
   ruby \
@@ -151,15 +149,19 @@ sudo aptitude install -y \
   zeal \
 
 # Datascience stuff.
+sudo pip3 install \
+  jupyter \
+  jupyterthemes \
+  matplotlib \
+  numpy \
+  pandas \
+  scipy \
+  seaborn \
+  sympy \
+  torch \
+
 sudo aptitude install -y \
-  jupyter-notebook \
-  ipython3 \
   octave \
-  python3-matplotlib \
-  python3-numpy \
-  python3-pandas \
-  python3-scipy \
-  python3-sympy \
 
 # Media.
 sudo aptitude install -y \
@@ -171,12 +173,11 @@ sudo aptitude install -y \
 # Communication
 sudo aptitude install -y \
   fonts-emojione \
-  google-talkplugin \
   telegram-desktop \
 
 # Veracrypt
-sudo add-apt-repository ppa:unit193/encryption
-sudo aptitude install veracrypt
+sudo add-apt-repository -y ppa:unit193/encryption
+sudo aptitude install -y veracrypt
 
 # Snaps
 sudo snap install slack --classic
@@ -189,16 +190,18 @@ sudo bash -c 'curl https://godeb.s3.amazonaws.com/godeb-amd64.tar.gz | tar xzO >
 
 # Vim stuff.
 mkdir -p ~/.vim/bak
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
+if [ ! -d "~/.vim/Vundle" ]; then
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  vim +PluginInstall +qall
+fi
 
 # Tor
-sudo sh -c "echo deb http://deb.torproject.org/torproject.org $RELEASE_NAME main > /etc/apt/sources.list.d/tor.list"
-gpg --keyserver keys.gnupg.net --recv A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89
-gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | sudo apt-key add -
-sudo add-apt-repository -y ppa:webupd8team/tor-browser
-sudo aptitude update
-sudo aptitude install -y tor-browser
+#sudo sh -c "echo deb http://deb.torproject.org/torproject.org $RELEASE_NAME main > /etc/apt/sources.list.d/tor.list"
+#gpg --keyserver keys.gnupg.net --recv A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89
+#gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | sudo apt-key add -
+#sudo add-apt-repository -y ppa:webupd8team/tor-browser
+#sudo aptitude update
+#sudo aptitude install -y tor-browser
 
 # Kindlegen.
 wget -c http://kindlegen.s3.amazonaws.com/kindlegen_linux_2.6_i386_v2_9.tar.gz -O /tmp/k.tar.gz && \
