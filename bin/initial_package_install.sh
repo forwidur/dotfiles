@@ -15,7 +15,6 @@ sudo apt install -y apt-transport-https ca-certificates \
 # Google repos.
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list'
-sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/talkplugin/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 if [ -e /etc/apt/sources.list.d/google.list ]; then
   sudo rm /etc/apt/sources.list.d/google.list
 fi
