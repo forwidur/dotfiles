@@ -8,6 +8,9 @@ RELEASE_NAME=`lsb_release -cs`
 sudo apt-get update
 sudo apt-get install -y apt-transport-https ca-certificates \
                         curl wget software-properties-common aptitude
+sudo apt install -y apt-transport-https ca-certificates \
+                    curl wget software-properties-common aptitude
+
 
 # Google repos.
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -26,10 +29,10 @@ sudo add-apt-repository -y \
 # Oracle Java.
 #sudo add-apt-repository -y ppa:webupd8team/java
 
-sudo aptitude update
+sudo apt update
 
 # Environment.
-sudo aptitude install -y \
+sudo apt install -y \
   alsa-utils \
   breeze-cursor-theme \
   gdm3 \
@@ -46,7 +49,7 @@ echo "source /home/${USER}/.bashrc.fwd" >> "/home/${USER}/.bashrc"
 
 
 # Essentials
-sudo aptitude install -y \
+sudo apt install -y \
   google-chrome-beta \
   rxvt-unicode \
   stow \
@@ -54,7 +57,7 @@ sudo aptitude install -y \
   python3 \
 
 # System
-sudo aptitude install -y \
+sudo apt install -y \
   exfat-fuse \
   exfat-utils \
   fio \
@@ -72,7 +75,7 @@ sudo aptitude install -y \
 sudo pip3 install pyudev
 
 # Power management
-sudo aptitude install -y \
+sudo apt install -y \
   acpi \
   acpi-support \
   acpi-call-dkms \
@@ -83,7 +86,7 @@ sudo aptitude install -y \
   tp-smapi-dkms \
 
 # Network stuff.
-sudo aptitude install -y \
+sudo apt install -y \
   arp-scan \
   ethtool \
   hping3 \
@@ -99,7 +102,7 @@ sudo aptitude install -y \
   wireshark-gtk \
 
 # Utils.
-sudo aptitude install -y \
+sudo apt install -y \
   cmatrix \
   dunst \
   evince \
@@ -122,7 +125,7 @@ sudo aptitude install -y \
   youtube-dl \
 
 # Dev stuff.
-sudo aptitude install -y \
+sudo apt install -y \
   ack \
   build-essential \
   cabal-install \
@@ -160,24 +163,24 @@ sudo pip3 install \
   sympy \
   torch \
 
-sudo aptitude install -y \
+sudo apt install -y \
   octave \
 
 # Media.
-sudo aptitude install -y \
+sudo apt install -y \
   clementine \
   flac \
   lame \
   mpv \
 
 # Communication
-sudo aptitude install -y \
+sudo apt install -y \
   fonts-emojione \
   telegram-desktop \
 
 # Veracrypt
 sudo add-apt-repository -y ppa:unit193/encryption
-sudo aptitude install -y veracrypt
+sudo apt install -y veracrypt
 
 # Snaps
 sudo snap install slack --classic
@@ -200,8 +203,8 @@ fi
 #gpg --keyserver keys.gnupg.net --recv A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89
 #gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | sudo apt-key add -
 #sudo add-apt-repository -y ppa:webupd8team/tor-browser
-#sudo aptitude update
-#sudo aptitude install -y tor-browser
+#sudo apt update
+#sudo apt install -y tor-browser
 
 # Kindlegen.
 wget -c http://kindlegen.s3.amazonaws.com/kindlegen_linux_2.6_i386_v2_9.tar.gz -O /tmp/k.tar.gz && \
@@ -211,8 +214,8 @@ wget -c http://kindlegen.s3.amazonaws.com/kindlegen_linux_2.6_i386_v2_9.tar.gz -
 export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee /etc/apt/sources.list.d/google-cloud-sdk.list
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-sudo aptitude update
-sudo aptitude install -y google-cloud-sdk kubectl
+sudo apt update
+sudo apt install -y google-cloud-sdk kubectl
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
 curl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-kvm2 && chmod +x docker-machine-driver-kvm2 && sudo mv docker-machine-driver-kvm2 /usr/local/bin/
 curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | sudo bash
