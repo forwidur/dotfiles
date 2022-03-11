@@ -154,6 +154,7 @@ sudo apt install -y \
   cmatrix \
   dunst \
   evince \
+  flameshot \
   geeqie \
   lbzip2 \
   maim \
