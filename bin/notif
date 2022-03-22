@@ -1,0 +1,20 @@
+#!/bin/bash
+
+source "$HOME/.config/tokens/notif_key"
+host=`hostname`
+title="Notification from $host"
+
+if [ ! -z "$1" ]; then
+  title="$1"
+fi
+
+if [ -z "$2" ]; then
+  c=`cat` # reads STDIN
+else
+  shift
+  c="$@"
+fi
+
+#echo $title
+#echo $c
+curl -s --data-urlencode "t=$title" --data-urlencode "c=$c" "http://xdroid.net/api/message?k=$key" > /dev/null
