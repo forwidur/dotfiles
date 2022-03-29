@@ -213,6 +213,7 @@ sudo pip3 install \
   seaborn \
   sympy \
   torch \
+  vitualenv \
 \&\& \
 sudo apt install -y \
   octave \
