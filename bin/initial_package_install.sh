@@ -156,6 +156,7 @@ sudo apt install -y \
   evince \
   flameshot \
   geeqie \
+  gnome-sushi \
   lbzip2 \
   maim \
   moreutils \
