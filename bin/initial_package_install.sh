@@ -254,7 +254,7 @@ E
 # Vim stuff.
 try '18vim' $(cat << E
 mkdir -p ~/.vim/bak;
-if [ ! -d "~/.vim/Vundle" ]; then
+if [ ! -d "~/.vim/bundle/Vundle" ]; then
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim;
   vim +PluginInstall +qall;
 fi
