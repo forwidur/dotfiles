@@ -11,6 +11,8 @@ fi
 # Needed for key verification and initial install.
 #sudo apt update
 
+mkdir ~/.ssh/sockets
+
 try() {
   phase=$1
   shift
@@ -74,6 +76,7 @@ sudo apt install -y \
   breeze-cursor-theme \
   gdm3 \
   gnome-panel \
+  gnome-screensaver \
   gnome-session-flashback \
   xmonad \
   xorg \
@@ -101,8 +104,7 @@ sudo apt install -y \
 # System
 try '07system' \
 sudo apt install -y \
-  exfat-fuse \
-  exfat-utils \
+  exfatprogs \
   fio \
   glances \
   go-mtpfs \
@@ -205,6 +207,7 @@ sudo apt install -y \
 # Datascience stuff.
 try '12datascience' \
 sudo pip3 install \
+  argcomplete \
   jupyter \
   jupyterthemes \
   matplotlib \
