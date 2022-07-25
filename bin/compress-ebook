@@ -4,9 +4,9 @@ USAGE="Usage: $0 big.epub small.epub"
 unzip -q -d "$1-tmp" "$1"   # unzip big.epub in tmp directory
 cd "$1-tmp"
 # Compress all images larger than NxN in tmp
-find . -type f  \
-       -iregex  '^.*[.]\(jpg\|jpeg\|png\|gif\)$' \
-       -exec mogrify -verbose -quality 40 -resize '1080x1440>' {} \;
+find . -type f -iregex  '^.*[.]\(jpg\|jpeg\|png\|gif\)$' | \
+    parallel -q mogrify -verbose -quality 40 -resize '600x800>' {} \ |&
+    grep --color=always -P '\d+x\d+=>\d*x\d*'
 zip -Dquro "../$2" .   # Zip up the compressed tmp folder as small.epub
 cd ..
 rm -rf "$1-tmp"   # Cleanup
