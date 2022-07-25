@@ -136,11 +136,16 @@ sudo pip3 install undervolt
 # Network stuff.
 try '09network' \
 sudo apt install -y \
+  aircrack-ng \
   arp-scan \
   ethtool \
+  hashcat \
+  hcxdumptool \
+  hcxtools \
   hping3 \
   iperf3 \
   nmap \
+  reaver \
   speedtest-cli \
   ssmtp \
   tsocks \
