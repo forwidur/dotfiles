@@ -223,8 +223,10 @@ sudo pip3 install \
   sympy \
   torch \
   vitualenv \
+  opencv-python \
 \&\& \
 sudo apt install -y \
+  python3-venv \
   octave \
 
 # Media.
