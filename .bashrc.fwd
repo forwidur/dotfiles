@@ -60,10 +60,11 @@ clucky(){
 
 mp3recode() {
   preset=$1; shift;
-  echo -e "Using preset \033[1;93m$preset\033[0m"
+#  echo -e "Using preset \033[1;93m$preset\033[0m"
   for i do
     echo "$i"
     tmpf=`mktemp`
+    chmod 644 "$tmpf"
     lame --quiet --preset $preset "$i" $tmpf && mv $tmpf "${i/.wav/.mp3/}"
   done
 }
@@ -71,13 +72,13 @@ mp3recode() {
 mp3parallelrecode() {
   preset=$1; shift;
   files=("$@")  # This way files is still an array.
-  echo -e "Parallel recode using preset \033[1;93m$preset\033[0m"
-  parallel -u "echo {};  \
+#  echo -e "Parallel recode using preset \033[1;93m$preset\033[0m"
+  parallel -u " \
       tmpf=\`mktemp\`; \
+      chmod 644 \$tmpf; \
       dst={} && dst=\${dst/.wav/.mp3}; \
-      echo \$dst; \
       lame --quiet --preset $preset {} \$tmpf && \
-      mv \$tmpf \"\$dst\"" ::: "${files[@]}"
+      mv \$tmpf \"\$dst\" && echo \$dst" ::: "${files[@]}"
 }
 
 alias node='env NODE_NO_READLINE=1 rlwrap node'
