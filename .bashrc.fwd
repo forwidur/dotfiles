@@ -84,5 +84,5 @@ mp3parallelrecode() {
 alias node='env NODE_NO_READLINE=1 rlwrap node'
 
 if [ -f "/home/${USER}/google-cloud-sdk/completion.bash.inc" ]; then source "/home/${USER}/google-cloud-sdk/completion.bash.inc"; fi
-source <(helm completion bash)
-source <(kubectl completion bash)
+#source <(helm completion bash)
+#source <(kubectl completion bash)
