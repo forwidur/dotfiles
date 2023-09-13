@@ -119,6 +119,7 @@ sudo apt install -y \
   inotify-tools \
   ioping \
   iotop \
+  mosh \
   parallel \
   pmount \
   rlwrap \
