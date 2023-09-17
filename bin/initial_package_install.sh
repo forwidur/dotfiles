@@ -42,7 +42,8 @@ try() {
 
 try '00init' \
 sudo apt install -y apt-transport-https ca-certificates \
-                    curl wget software-properties-common aptitude
+                    curl wget software-properties-common aptitude \
+                    python3-pip
 
 # Google repos.
 try '01google' $(cat << EOM
