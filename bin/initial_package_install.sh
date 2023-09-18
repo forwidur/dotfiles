@@ -85,6 +85,7 @@ sudo apt install -y \
   gnome-panel \
   gnome-screensaver \
   gnome-session-flashback \
+  kbdd \
   xmonad \
   xorg \
 
