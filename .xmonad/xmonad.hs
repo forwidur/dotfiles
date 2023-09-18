@@ -106,18 +106,17 @@ sanitize (x:rest) | fromEnum x > 127 = "&#" ++ show (fromEnum x) ++ "; " ++
                   | otherwise        = x : sanitize rest
 
 
-myResizable = ResizableTall 1 (3/100) (1/2) []
 
 myLayout
-    = tiled
-    ||| myResizable
----    ||| FixedColumn 1 20 84 10
+    = myResizable
+--    ||| tiled
+--    ||| FixedColumn 1 20 84 10
     ||| ThreeColMid 1 (3/100) (1/3)
-    ||| ThreeCol 1 (3/100) (2/5)
+--    ||| ThreeCol 1 (3/100) (2/5)
     ||| multiCol [1] 1 0.01 0.2
     ||| Full
-    ||| simpleTabbed
-    ||| (reflectHoriz $ withIM (1%12) (Title "Buddy List") (reflectHoriz $ myResizable))
+--    ||| simpleTabbed
+--    ||| (reflectHoriz $ withIM (1%12) (Title "Buddy List") (reflectHoriz $ myResizable))
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -127,6 +126,8 @@ myLayout
      ratio   = 1/2
      -- Percent of screen to increment by when resizing panes
      delta   = 3/100
+     myResizable = ResizableTall 1 (3/100) (1/2) []
+
 
 delKeys x = foldr M.delete (keys defaultConfig x) (keysToRemove x)
 
