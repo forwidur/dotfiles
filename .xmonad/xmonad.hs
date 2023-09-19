@@ -6,6 +6,7 @@ import System.IO
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
+import qualified XMonad.StackSet as W
 
 --import Control.OldException
 import Control.Monad
@@ -27,6 +28,7 @@ import XMonad.Layout.MultiColumns
 import XMonad.Util.EZConfig
 
 import qualified Data.Map as M
+import qualified Data.List as D
 import XMonad.Prompt
 import XMonad.Prompt.Shell
 import XMonad.Prompt.Window
@@ -37,6 +39,9 @@ import qualified XMonad.Actions.Search as S
 
 import XMonad.Actions.CycleWS
 import Data.Ratio ((%))
+
+import XMonad.Actions.DynamicWorkspaces
+import XMonad.Actions.CopyWindow(copy)
 
 -- This retry is really awkward, but sometimes DBus won't let us get our
 -- name unless we retry a couple times.
@@ -66,8 +71,12 @@ main = xmonad $ docks $ gnomeConfig
   , terminal   = "rxvt"
   , modMask    = mod5Mask
   , startupHook = setWMName "LG3D"  -- Needed for Idea to work.
+  , workspaces = myWorkspaces
   } `additionalKeysP` multiKeys
 
+myWorkspaces = ["shell", "web", "work", "chat", "music", "torrent"]
+
+-- className via `xprop`
 myManageHook = composeAll
     [ manageHook gnomeConfig
     , className =? "mpv"               --> doFloat
@@ -75,8 +84,16 @@ myManageHook = composeAll
     , className =? "Gimp"              --> doFloat
     , resource  =? "desktop_window"    --> doIgnore
     , isFullscreen                     --> doFullFloat
-      -- chrome chat
+    -- chrome chat
     , stringProperty "WM_WINDOW_ROLE" =? "pop-up" --> doFloat
+    -- chat WS
+    , className =? "Signal"            --> doShift ( "chat" )
+    , className =? "TelegramDesktop"   --> doShift ( "chat" )
+    , title =? "Messenger - Google Chrome"   --> doShift ( "chat" )
+    -- music WS
+    , className =? "Clementine"   --> doShift ( "music" )
+    -- torrent WS
+    , className =? "qBittorrent"   --> doShift ( "torrent" )
     ]
 
 myLogHookWithPP :: PP -> X ()
@@ -99,11 +116,11 @@ pangoColor fg = wrap left right
   left  = "<span foreground=\"" ++ fg ++ "\">"
   right = "</span>"
 
-sanitize :: String -> String
-sanitize [] = []
-sanitize (x:rest) | fromEnum x > 127 = "&#" ++ show (fromEnum x) ++ "; " ++
-                                       sanitize rest
-                  | otherwise        = x : sanitize rest
+-- sanitize :: String -> String
+-- sanitize [] = []
+-- sanitize (x:rest) | fromEnum x > 127 = "&#" ++ show (fromEnum x) ++ "; " ++
+--                                        sanitize rest
+--                   | otherwise        = x : sanitize rest
 
 
 
@@ -133,12 +150,20 @@ delKeys x = foldr M.delete (keys defaultConfig x) (keysToRemove x)
 
 newKeys x = M.union (delKeys x) (M.fromList (myKeys x))
 
+workspaceSwitchKeys = [xK_1..xK_9] ++ [xK_0] ++[xK_F1 .. xK_F12]
+
 myKeys conf@(XConfig {XMonad.modMask = modm}) =
         [ ((modm, xK_b     ), sendMessage ToggleStruts)
         , ((modm, xK_i     ), sendMessage (IncMasterN 1))
         , ((modm, xK_d     ), sendMessage (IncMasterN (-1)))
         , ((modm, xK_p     ), shellPrompt myXPConfig)
         , ((modm, xK_grave), windowPromptGoto myXPConfig)
+
+        , ((modm, xK_v), selectWorkspace myXPConfig)
+        , ((modm .|. shiftMask, xK_v), withWorkspace myXPConfig (windows . W.shift))
+        , ((modm .|. shiftMask, xK_BackSpace), removeWorkspace)
+        , ((modm, xK_f), toggleWS)
+
         , ((modm, xK_s), S.promptSearch myXPConfig S.google)
         , ((modm .|. controlMask, xK_x), xmonadPrompt myXPConfig)
         , ((modm,               xK_bracketright), nextWS)
@@ -147,12 +172,20 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
         , ((modm .|. shiftMask, xK_bracketleft ), shiftToPrev >> prevWS)
         , ((modm,               xK_a),            sendMessage MirrorShrink)
         , ((modm,               xK_z),            sendMessage MirrorExpand)
+
         , ((controlMask .|. mod1Mask, xK_l),      spawn "gnome-screensaver-command -l")
         , ((controlMask .|. mod1Mask, xK_s),      spawn "QT_QPA_PLATFORM=xcb flameshot gui")
         , ((controlMask .|. mod1Mask, xK_r),      spawn "killall -USR1 redshift")
         , ((controlMask .|. mod1Mask, xK_n),      spawn "notify-send DUNST_COMMAND_PAUSE")
         , ((controlMask .|. mod1Mask, xK_b),      spawn "notify-send DUNST_COMMAND_RESUME")
         ]
+-- mod-[1..9]       %! Switch to workspace N in the list of workspaces
+-- mod-shift-[1..9] %! Move client to workspace N in the list of workspaces
+   ++
+   zip (zip (repeat (modm)) workspaceSwitchKeys) (map (withNthWorkspace W.greedyView) [0..])
+   ++
+   zip (zip (repeat (modm .|. shiftMask)) workspaceSwitchKeys) (map (withNthWorkspace W.shift) [0..])
+
 
 multiKeys =
   [ ("<XF86AudioMute>",         spawn "amixer -D pulse set Master 1+ toggle")
