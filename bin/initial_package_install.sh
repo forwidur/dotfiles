@@ -123,6 +123,7 @@ sudo apt install -y \
   iotop \
   iotop-c \
   mosh \
+  ntpdate \
   parallel \
   pmount \
   rlwrap \
