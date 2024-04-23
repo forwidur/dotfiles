@@ -121,6 +121,7 @@ sudo apt install -y \
   inotify-tools \
   ioping \
   iotop \
+  iotop-c \
   mosh \
   parallel \
   pmount \
