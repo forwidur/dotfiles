@@ -38,6 +38,7 @@ import qualified XMonad.Actions.Submap as SM
 import qualified XMonad.Actions.Search as S
 
 import XMonad.Actions.CycleWS
+import Data.List (isSuffixOf, isPrefixOf, isInfixOf)
 import Data.Ratio ((%))
 
 import XMonad.Actions.DynamicWorkspaces
@@ -76,6 +77,10 @@ main = xmonad $ docks $ gnomeConfig
 
 myWorkspaces = ["shell", "web", "work", "chat", "music", "torrent"]
 
+q ^? x = fmap (x `isSuffixOf`) q
+q ?^ x = fmap (x `isPrefixOf`) q
+q ^?^ x = fmap (x `isInfixOf`) q
+
 -- className via `xprop`
 myManageHook = composeAll
     [ manageHook gnomeConfig
@@ -87,13 +92,15 @@ myManageHook = composeAll
     -- chrome chat
     , stringProperty "WM_WINDOW_ROLE" =? "pop-up" --> doFloat
     -- chat WS
-    , className =? "Signal"            --> doShift ( "chat" )
-    , className =? "TelegramDesktop"   --> doShift ( "chat" )
-    , title =? "Messenger - Google Chrome"   --> doShift ( "chat" )
+    , className =? "Signal"                --> doShift ( "chat" )
+    , className =? "TelegramDesktop"       --> doShift ( "chat" )
+    , title =? "Messenger - Google Chrome" --> doShift ( "chat" )
+    , title ^? "WhatsApp - Google Chrome"  --> doShift ( "chat" )
+    , title =? "Messages - Google Chrome"  --> doShift ( "chat" )
     -- music WS
     , className =? "Clementine"   --> doShift ( "music" )
     -- torrent WS
-    , className =? "qBittorrent"   --> doShift ( "torrent" )
+    , title ?^ "qBittorrent"   --> doShift ( "torrent" )
     ]
 
 myLogHookWithPP :: PP -> X ()
