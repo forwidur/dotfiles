@@ -185,7 +185,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
         , ((controlMask .|. mod1Mask, xK_r),      spawn "killall -USR1 redshift")
         , ((controlMask .|. mod1Mask, xK_n),      spawn "notify-send DUNST_COMMAND_PAUSE")
         , ((controlMask .|. mod1Mask, xK_b),      spawn "notify-send DUNST_COMMAND_RESUME")
-        , ((controlMask .|. mod1Mask, xK_Pause),      spawn "sudo pm-suspend")
+        , ((controlMask .|. mod1Mask, xK_Pause),      spawn "locksuspend")
         ]
 -- mod-[1..9]       %! Switch to workspace N in the list of workspaces
 -- mod-shift-[1..9] %! Move client to workspace N in the list of workspaces
