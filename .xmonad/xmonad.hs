@@ -59,7 +59,7 @@ import XMonad.Actions.CopyWindow(copy)
 
 main :: IO ()
 main = xmonad $ docks $ gnomeConfig
-  { logHook    = myLogHookWithPP $ defaultPP {
+  { logHook    = myLogHookWithPP $ def {
            ppOrder    = take 1 . drop 2
            , ppTitle    = pangoColor "#003366" . shorten 120
            , ppUrgent   = pangoColor "red"
@@ -77,7 +77,7 @@ main = xmonad $ docks $ gnomeConfig
 
 myWorkspaces = ["shell", "web", "work", "chat", "music", "torrent"]
 
-q ^? x = fmap (x `isSuffixOf`) q
+-- q ^? x = fmap (x `isSuffixOf`) q
 q ?^ x = fmap (x `isPrefixOf`) q
 q ^?^ x = fmap (x `isInfixOf`) q
 
@@ -153,7 +153,7 @@ myLayout
      myResizable = ResizableTall 1 (3/100) (1/2) []
 
 
-delKeys x = foldr M.delete (keys defaultConfig x) (keysToRemove x)
+delKeys x = foldr M.delete (keys def x) (keysToRemove x)
 
 newKeys x = M.union (delKeys x) (M.fromList (myKeys x))
 
@@ -211,7 +211,7 @@ keysToRemove XConfig{modMask = modm} =
         ]
 
 
-myXPConfig = defaultXPConfig {
+myXPConfig = def {
   font = "-Misc-Fixed-Medium-R-Normal-*-18-*-*-*-*-*-*-*",
   bgColor = "black",
   fgColor = "green",
