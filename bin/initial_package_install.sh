@@ -207,11 +207,13 @@ sudo apt install -y \
   git \
   git-gui \
   graphviz \
+  fzf \
   jq \
   meld \
   openjdk-8-jdk \
   python3 \
   python3-pip \
+  rg \
   ruby \
   shellcheck \
   source-highlight \
