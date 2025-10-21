@@ -10,3 +10,4 @@ find . -type f -iregex  '^.*[.]\(jpg\|jpeg\|png\|gif\)$' | \
 zip -Dquro "../$2" .   # Zip up the compressed tmp folder as small.epub
 cd ..
 rm -rf "$1-tmp"   # Cleanup
+ls -lah "$1" "$2"
