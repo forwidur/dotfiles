@@ -1,6 +1,15 @@
 export HISTSIZE=1000000
 export HISTFILESIZE=10000
 export HISTCONTROL=ignoreboth
+export HISTTIMEFORMAT='%F %T '  # ISO date + time for each history entry
+
+# Keep multi-line commands together and append instead of overwrite
+shopt -s cmdhist
+shopt -s histappend
+
+# PROMPT_COMMAND: on each prompt, append current session history to HISTFILE,
+# then read any new history from HISTFILE (so other shells' commands appear).
+PROMPT_COMMAND='history -a; history -n'
 
 alias grep="/bin/grep --color=auto"
 
