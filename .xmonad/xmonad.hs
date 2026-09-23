@@ -94,7 +94,7 @@ myManageHook = composeAll
     -- chat WS
     , className =? "Signal"                --> doShift ( "chat" )
     , className =? "TelegramDesktop"       --> doShift ( "chat" )
-    , title =? "Messenger - Google Chrome" --> doShift ( "chat" )
+    , title ^? "Messenger - Google Chrome" --> doShift ( "chat" )
     , title ^? "WhatsApp - Google Chrome"  --> doShift ( "chat" )
     , title =? "Messages - Google Chrome"  --> doShift ( "chat" )
     -- music WS
