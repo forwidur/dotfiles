@@ -38,5 +38,5 @@ ARGV.each { |file|
     add_file file
   end
 
-  print "Done.\n"
+  system('mv', '-v', file, '/home/mag/insoft/books/')
 }
