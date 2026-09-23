@@ -95,3 +95,6 @@ alias node='env NODE_NO_READLINE=1 rlwrap node'
 if [ -f "/home/${USER}/google-cloud-sdk/completion.bash.inc" ]; then source "/home/${USER}/google-cloud-sdk/completion.bash.inc"; fi
 #source <(helm completion bash)
 #source <(kubectl completion bash)
+
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+export QT_FONT_DPI=75
